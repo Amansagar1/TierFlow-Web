@@ -31,20 +31,20 @@ afterEach(async () => {
   }
 });
 
-describe('Nexachain AI - Authentication & Security Tests', () => {
+describe('TierFlow - Authentication & Security Tests', () => {
   it('should register a new user successfully and return JWT', async () => {
     const res = await request(app)
       .post('/api/auth/register')
       .send({
         fullName: 'Alice Walker',
-        email: 'alice@nexachain.ai',
+        email: 'alice@tierflow.com',
         mobileNumber: '+919876543210',
         password: 'password123',
       });
 
     expect(res.status).toBe(201);
     expect(res.body.status).toBe('success');
-    expect(res.body.data.user.email).toBe('alice@nexachain.ai');
+    expect(res.body.data.user.email).toBe('alice@tierflow.com');
     expect(res.body.data.user.referralCode).toBeDefined();
     expect(res.body.data.token).toBeDefined();
 
@@ -52,7 +52,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
     expect(res.body.data.user.password).toBeUndefined();
 
     // Verify password in DB is hashed
-    const userInDb = await User.findOne({ email: 'alice@nexachain.ai' }).select('+password');
+    const userInDb = await User.findOne({ email: 'alice@tierflow.com' }).select('+password');
     expect(userInDb.password).not.toBe('password123');
   });
 
@@ -61,7 +61,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
       .post('/api/auth/register')
       .send({
         fullName: 'Alice Walker',
-        email: 'alice@nexachain.ai',
+        email: 'alice@tierflow.com',
         mobileNumber: '+919876543210',
         password: 'password123',
       });
@@ -70,7 +70,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
       .post('/api/auth/register')
       .send({
         fullName: 'Alice Clone',
-        email: 'alice@nexachain.ai',
+        email: 'alice@tierflow.com',
         mobileNumber: '+919876543211',
         password: 'password123',
       });
@@ -84,7 +84,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
       .post('/api/auth/register')
       .send({
         fullName: 'Bob Smith',
-        email: 'bob@nexachain.ai',
+        email: 'bob@tierflow.com',
         mobileNumber: '+919876543210',
         password: 'securepassword',
       });
@@ -92,7 +92,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
     const res = await request(app)
       .post('/api/auth/login')
       .send({
-        email: 'bob@nexachain.ai',
+        email: 'bob@tierflow.com',
         password: 'securepassword',
       });
 
@@ -107,7 +107,7 @@ describe('Nexachain AI - Authentication & Security Tests', () => {
   });
 });
 
-describe('Nexachain AI - Investment & Referral Multi-Level Commission Tests', () => {
+describe('TierFlow - Investment & Referral Multi-Level Commission Tests', () => {
   let parentToken;
   let parentUser;
   let childToken;
@@ -119,7 +119,7 @@ describe('Nexachain AI - Investment & Referral Multi-Level Commission Tests', ()
       .post('/api/auth/register')
       .send({
         fullName: 'Parent User',
-        email: 'parent@nexachain.ai',
+        email: 'parent@tierflow.com',
         mobileNumber: '+919876543210',
         password: 'password123',
       });
@@ -132,7 +132,7 @@ describe('Nexachain AI - Investment & Referral Multi-Level Commission Tests', ()
       .post('/api/auth/register')
       .send({
         fullName: 'Child User',
-        email: 'child@nexachain.ai',
+        email: 'child@tierflow.com',
         mobileNumber: '+919876543211',
         password: 'password123',
         referralCode: parentUser.referralCode,
@@ -187,20 +187,20 @@ describe('Nexachain AI - Investment & Referral Multi-Level Commission Tests', ()
 
     expect(res.status).toBe(200);
     expect(res.body.data.root.children.length).toBe(1);
-    expect(res.body.data.root.children[0].email).toBe('child@nexachain.ai');
+    expect(res.body.data.root.children[0].email).toBe('child@tierflow.com');
     expect(res.body.data.summary.directReferrals).toBe(1);
   });
 });
 
-describe('Nexachain AI - Daily ROI Calculation & Idempotency Safeguards', () => {
+describe('TierFlow - Daily ROI Calculation & Idempotency Safeguards', () => {
   it('should process daily ROI and prevent duplicate execution for the same day', async () => {
     // 1. Create a user
     const user = await User.create({
       fullName: 'Investor User',
-      email: 'investor@nexachain.ai',
+      email: 'investor@tierflow.com',
       mobileNumber: '+919876543299',
       password: 'password123',
-      referralCode: 'NXAINVEST1',
+      referralCode: 'TFLINVEST1',
       walletBalance: 0,
       totalRoiEarned: 0,
     });

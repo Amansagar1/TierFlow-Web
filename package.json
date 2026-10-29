@@ -1,7 +1,7 @@
 {
-  "name": "nexachain-ai",
+  "name": "tierflow",
   "version": "1.0.0",
-  "description": "Nexachain AI - MERN Stack Investment and Referral Platform",
+  "description": "TierFlow - MERN Stack Investment and Referral Platform",
   "private": true,
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
@@ -21,6 +21,6 @@
     "react",
     "node"
   ],
-  "author": "Nexachain AI Developer",
+  "author": "TierFlow Developer",
   "license": "ISC"
 }

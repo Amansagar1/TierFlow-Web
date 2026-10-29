@@ -1,7 +1,7 @@
 {
-  "name": "nexachain-backend",
+  "name": "tierflow-backend",
   "version": "1.0.0",
-  "description": "Nexachain AI Backend API and Scheduler",
+  "description": "TierFlow Backend API and Scheduler",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

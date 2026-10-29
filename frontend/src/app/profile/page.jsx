@@ -98,7 +98,7 @@ export default function ProfilePage() {
   }, [user]);
 
   const referralCode = user?.referralCode || '';
-  const referralLink = referralCode ? `https://nexachain.ai/register?ref=${referralCode}` : 'https://nexachain.ai/register';
+  const referralLink = referralCode ? `https://tierflow.com/register?ref=${referralCode}` : 'https://tierflow.com/register';
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(referralCode);
@@ -263,7 +263,7 @@ export default function ProfilePage() {
             <div className="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
               <div className="h-24 sm:h-28 bg-gradient-to-r from-[#0066FF] via-[#0A4CC0] to-[#00C48C] relative p-4 flex items-end">
                 <div className="absolute right-4 top-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-white text-[10px] font-bold border border-white/20">
-                  Investor ID: #{referralCode || 'NXA-0000'}
+                  Investor ID: #{referralCode || 'TFL-0000'}
                 </div>
               </div>
               <div className="px-5 pb-5 pt-0 relative">

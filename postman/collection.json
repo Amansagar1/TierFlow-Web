@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Nexachain AI API Collection",
-    "description": "Complete REST API collection for Nexachain AI investment and referral platform",
+    "name": "TierFlow API Collection",
+    "description": "Complete REST API collection for TierFlow investment and referral platform",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -32,7 +32,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"fullName\": \"Jane Smith\",\n  \"email\": \"jane@nexachain.ai\",\n  \"mobileNumber\": \"+919876543220\",\n  \"password\": \"password123\",\n  \"referralCode\": \"NXA123456\"\n}"
+              "raw": "{\n  \"fullName\": \"Jane Smith\",\n  \"email\": \"jane@tierflow.com\",\n  \"mobileNumber\": \"+919876543220\",\n  \"password\": \"password123\",\n  \"referralCode\": \"TFL123456\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/auth/register",
@@ -71,7 +71,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"Aman@nexachain.ai\",\n  \"password\": \"password123\"\n}"
+              "raw": "{\n  \"email\": \"Aman@tierflow.com\",\n  \"password\": \"password123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/auth/login",

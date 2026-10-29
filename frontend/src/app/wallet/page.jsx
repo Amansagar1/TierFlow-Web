@@ -572,7 +572,7 @@ export default function WalletPage() {
               <div className="relative z-10 flex items-center justify-between mb-6">
                 <div>
                   <h4 className="font-extrabold text-sm tracking-wide text-white">
-                    Nexachain <span className="text-blue-400">AI</span>
+                    Tier<span className="text-blue-400">Flow</span>
                   </h4>
                   <p className="text-[9px] text-slate-400 tracking-wider uppercase font-semibold">
                     Fintech Digital Wallet
@@ -710,7 +710,7 @@ export default function WalletPage() {
       >
         <div className="space-y-4 text-xs">
           <p className="text-slate-500">
-            Select or enter the amount you want to add to your Nexachain AI investment wallet.
+            Select or enter the amount you want to add to your TierFlow investment wallet.
           </p>
           <div>
             <label className="block text-[11px] font-semibold text-slate-600 mb-1.5">

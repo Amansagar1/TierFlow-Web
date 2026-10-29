@@ -484,7 +484,7 @@ export default function ReferralTreePage() {
   }, []);
 
   const referralCode = user?.referralCode || treeData?.root?.referralCode || customRefCode || '';
-  const referralLink = referralCode ? `https://nexachain.ai/register?ref=${referralCode}` : 'https://nexachain.ai/register';
+  const referralLink = referralCode ? `https://tierflow.com/register?ref=${referralCode}` : 'https://tierflow.com/register';
 
   const { nodes: flowNodes, edges: flowEdges } = useMemo(() => {
     return generateFlowFromTree(treeData, user);
@@ -557,7 +557,7 @@ export default function ReferralTreePage() {
     )}`;
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute('href', jsonString);
-    downloadAnchor.setAttribute('download', `nexachain_referral_tree_${referralCode}.json`);
+    downloadAnchor.setAttribute('download', `tierflow_referral_tree_${referralCode}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -843,7 +843,7 @@ export default function ReferralTreePage() {
             type="text"
             value={customRefCode}
             onChange={(e) => setCustomRefCode(e.target.value.toUpperCase())}
-            placeholder="e.g. NXA123456"
+            placeholder="e.g. TFL123456"
           />
           <div className="flex justify-end gap-2.5 pt-2">
             <Button variant="secondary" size="sm" onClick={() => setIsEditModalOpen(false)}>

@@ -9,12 +9,12 @@ const { INVESTMENT_PLANS, INVESTMENT_STATUS, ROI_STATUS, REFERRAL_INCOME_TYPE } 
 
 const seedAtlas = async () => {
   try {
-    console.log('Connecting to MongoDB Atlas database naxachain...');
+    console.log('Connecting to MongoDB Atlas database tierflow...');
     await mongoose.connect(env.MONGODB_URI);
     console.log('Connected to Atlas successfully!');
 
-    // Clear existing collections in naxachain
-    console.log('Clearing existing collections in naxachain...');
+    // Clear existing collections in tierflow
+    console.log('Clearing existing collections in tierflow...');
     await Promise.all([
       User.deleteMany({}),
       Investment.deleteMany({}),
@@ -31,15 +31,15 @@ const seedAtlas = async () => {
       return d;
     };
 
-    console.log('Seeding demo users into naxachain...');
+    console.log('Seeding demo users into tierflow...');
 
     // 1. Root user: Aman Sagar
     const Aman = await User.create({
       fullName: 'Aman Sagar',
-      email: 'Aman@nexachain.ai',
+      email: 'Aman@tierflow.com',
       mobileNumber: '+91 98765 43210',
       password: 'password123',
-      referralCode: 'NXA123456',
+      referralCode: 'TFL123456',
       walletBalance: 12750,
       totalRoiEarned: 12750,
       totalLevelIncomeEarned: 4500,
@@ -82,17 +82,17 @@ const seedAtlas = async () => {
         twoFactorEnabled: true,
         sessionTimeout: '30m',
         ipRestricted: false,
-        apiKey: 'nxa_live_88f2190b41c9e831207a',
+        apiKey: 'tfl_live_88f2190b41c9e831207a',
       },
     });
 
     // 2. Direct referrals (Level 1)
     const u123 = await User.create({
       fullName: 'user123',
-      email: 'user123@nexachain.ai',
+      email: 'user123@tierflow.com',
       mobileNumber: '+919876543211',
       password: 'password123',
-      referralCode: 'NXA888123',
+      referralCode: 'TFL888123',
       referredBy: Aman._id,
       walletBalance: 1800,
       totalRoiEarned: 1800,
@@ -103,10 +103,10 @@ const seedAtlas = async () => {
 
     const u456 = await User.create({
       fullName: 'user456',
-      email: 'user456@nexachain.ai',
+      email: 'user456@tierflow.com',
       mobileNumber: '+919876543212',
       password: 'password123',
-      referralCode: 'NXA888456',
+      referralCode: 'TFL888456',
       referredBy: Aman._id,
       walletBalance: 1200,
       totalRoiEarned: 1200,
@@ -117,10 +117,10 @@ const seedAtlas = async () => {
 
     const u789 = await User.create({
       fullName: 'user789',
-      email: 'user789@nexachain.ai',
+      email: 'user789@tierflow.com',
       mobileNumber: '+919876543213',
       password: 'password123',
-      referralCode: 'NXA888789',
+      referralCode: 'TFL888789',
       referredBy: Aman._id,
       walletBalance: 1000,
       totalRoiEarned: 1000,
@@ -131,10 +131,10 @@ const seedAtlas = async () => {
 
     const u321 = await User.create({
       fullName: 'user321',
-      email: 'user321@nexachain.ai',
+      email: 'user321@tierflow.com',
       mobileNumber: '+919876543214',
       password: 'password123',
-      referralCode: 'NXA888321',
+      referralCode: 'TFL888321',
       referredBy: Aman._id,
       walletBalance: 1500,
       totalRoiEarned: 1500,
@@ -145,10 +145,10 @@ const seedAtlas = async () => {
 
     const u654 = await User.create({
       fullName: 'user654',
-      email: 'user654@nexachain.ai',
+      email: 'user654@tierflow.com',
       mobileNumber: '+919876543215',
       password: 'password123',
-      referralCode: 'NXA999654',
+      referralCode: 'TFL999654',
       referredBy: Aman._id,
       walletBalance: 500,
       totalRoiEarned: 500,
@@ -160,10 +160,10 @@ const seedAtlas = async () => {
     // 3. Level 2 referrals (under user123)
     const u987 = await User.create({
       fullName: 'user987',
-      email: 'user987@nexachain.ai',
+      email: 'user987@tierflow.com',
       mobileNumber: '+919876543216',
       password: 'password123',
-      referralCode: 'NXA999987',
+      referralCode: 'TFL999987',
       referredBy: u123._id,
       walletBalance: 750,
       totalRoiEarned: 750,
@@ -174,10 +174,10 @@ const seedAtlas = async () => {
 
     const u111 = await User.create({
       fullName: 'user111',
-      email: 'user111@nexachain.ai',
+      email: 'user111@tierflow.com',
       mobileNumber: '+919876543217',
       password: 'password123',
-      referralCode: 'NXA999111',
+      referralCode: 'TFL999111',
       referredBy: u123._id,
       walletBalance: 250,
       totalRoiEarned: 250,
@@ -188,10 +188,10 @@ const seedAtlas = async () => {
 
     const u222 = await User.create({
       fullName: 'user222',
-      email: 'user222@nexachain.ai',
+      email: 'user222@tierflow.com',
       mobileNumber: '+919876543218',
       password: 'password123',
-      referralCode: 'NXA999222',
+      referralCode: 'TFL999222',
       referredBy: u456._id,
       walletBalance: 500,
       totalRoiEarned: 500,
@@ -202,10 +202,10 @@ const seedAtlas = async () => {
 
     const u333 = await User.create({
       fullName: 'user333',
-      email: 'user333@nexachain.ai',
+      email: 'user333@tierflow.com',
       mobileNumber: '+919876543219',
       password: 'password123',
-      referralCode: 'NXA999333',
+      referralCode: 'TFL999333',
       referredBy: u789._id,
       walletBalance: 250,
       totalRoiEarned: 250,
@@ -216,10 +216,10 @@ const seedAtlas = async () => {
 
     const u444 = await User.create({
       fullName: 'user444',
-      email: 'user444@nexachain.ai',
+      email: 'user444@tierflow.com',
       mobileNumber: '+919876543220',
       password: 'password123',
-      referralCode: 'NXA999444',
+      referralCode: 'TFL999444',
       referredBy: u789._id,
       walletBalance: 250,
       totalRoiEarned: 250,
@@ -230,10 +230,10 @@ const seedAtlas = async () => {
 
     const u555 = await User.create({
       fullName: 'user555',
-      email: 'user555@nexachain.ai',
+      email: 'user555@tierflow.com',
       mobileNumber: '+919876543221',
       password: 'password123',
-      referralCode: 'NXA999555',
+      referralCode: 'TFL999555',
       referredBy: u321._id,
       walletBalance: 500,
       totalRoiEarned: 500,
@@ -244,10 +244,10 @@ const seedAtlas = async () => {
 
     const u666 = await User.create({
       fullName: 'user666',
-      email: 'user666@nexachain.ai',
+      email: 'user666@tierflow.com',
       mobileNumber: '+919876543222',
       password: 'password123',
-      referralCode: 'NXA999666',
+      referralCode: 'TFL999666',
       referredBy: u321._id,
       walletBalance: 500,
       totalRoiEarned: 500,
@@ -259,10 +259,10 @@ const seedAtlas = async () => {
     // 4. Level 3 referrals (under u987 & u222 & u333)
     await User.create({
       fullName: 'user777',
-      email: 'user777@nexachain.ai',
+      email: 'user777@tierflow.com',
       mobileNumber: '+919876543223',
       password: 'password123',
-      referralCode: 'NXA777001',
+      referralCode: 'TFL777001',
       referredBy: u987._id,
       walletBalance: 0,
       accountStatus: 'Active',
@@ -271,10 +271,10 @@ const seedAtlas = async () => {
 
     await User.create({
       fullName: 'user888',
-      email: 'user888@nexachain.ai',
+      email: 'user888@tierflow.com',
       mobileNumber: '+919876543224',
       password: 'password123',
-      referralCode: 'NXA888002',
+      referralCode: 'TFL888002',
       referredBy: u987._id,
       walletBalance: 100,
       accountStatus: 'Active',
@@ -283,10 +283,10 @@ const seedAtlas = async () => {
 
     await User.create({
       fullName: 'user999',
-      email: 'user999@nexachain.ai',
+      email: 'user999@tierflow.com',
       mobileNumber: '+919876543225',
       password: 'password123',
-      referralCode: 'NXA999003',
+      referralCode: 'TFL999003',
       referredBy: u222._id,
       walletBalance: 0,
       accountStatus: 'Active',
@@ -295,10 +295,10 @@ const seedAtlas = async () => {
 
     await User.create({
       fullName: 'user1000',
-      email: 'user1000@nexachain.ai',
+      email: 'user1000@tierflow.com',
       mobileNumber: '+919876543226',
       password: 'password123',
-      referralCode: 'NXA100004',
+      referralCode: 'TFL100004',
       referredBy: u222._id,
       walletBalance: 100,
       accountStatus: 'Active',
@@ -307,10 +307,10 @@ const seedAtlas = async () => {
 
     await User.create({
       fullName: 'user1010',
-      email: 'user1010@nexachain.ai',
+      email: 'user1010@tierflow.com',
       mobileNumber: '+919876543227',
       password: 'password123',
-      referralCode: 'NXA101005',
+      referralCode: 'TFL101005',
       referredBy: u333._id,
       walletBalance: 0,
       accountStatus: 'Active',
@@ -319,10 +319,10 @@ const seedAtlas = async () => {
 
     await User.create({
       fullName: 'user1111',
-      email: 'user1111@nexachain.ai',
+      email: 'user1111@tierflow.com',
       mobileNumber: '+919876543228',
       password: 'password123',
-      referralCode: 'NXA111106',
+      referralCode: 'TFL111106',
       referredBy: u333._id,
       walletBalance: 100,
       accountStatus: 'Active',
@@ -336,7 +336,7 @@ const seedAtlas = async () => {
     };
 
     // 5. Investments for Aman Sagar (matching UI Design screenshot #2 & #3)
-    console.log('Seeding investments into naxachain...');
+    console.log('Seeding investments into tierflow...');
     const inv1 = await Investment.create({
       user: Aman._id,
       investmentAmount: 25000,
@@ -406,7 +406,7 @@ const seedAtlas = async () => {
     });
 
     // 6. Referral Income Records (matching UI Design screenshot #5)
-    console.log('Seeding referral income records into naxachain...');
+    console.log('Seeding referral income records into tierflow...');
     const referralData = [
       { from: u123, level: 1, amount: 500, type: REFERRAL_INCOME_TYPE.DIRECT, date: daysAgo(0, 8, 45), inv: inv1 },
       { from: u456, level: 2, amount: 250, type: REFERRAL_INCOME_TYPE.LEVEL, date: daysAgo(1, 14, 10), inv: inv2 },
@@ -434,7 +434,7 @@ const seedAtlas = async () => {
     }
 
     // 7. ROI History Records (matching UI Design screenshot #4)
-    console.log('Seeding ROI history records into naxachain...');
+    console.log('Seeding ROI history records into tierflow...');
     const roiData = [
       { date: daysAgo(0), dateStr: daysAgoStr(0), inv: inv1, amount: 250, pct: 1.0 },
       { date: daysAgo(1), dateStr: daysAgoStr(1), inv: inv2, amount: 375, pct: 1.5 },
@@ -467,7 +467,7 @@ const seedAtlas = async () => {
     }
 
     // 8. Wallet Transactions (matching UI Design screenshot #6 & Wallet Page)
-    console.log('Seeding wallet transactions into naxachain...');
+    console.log('Seeding wallet transactions into tierflow...');
     const walletTxns = [
       {
         transactionId: 'TXN-90218',
@@ -589,8 +589,8 @@ const seedAtlas = async () => {
     }
 
     console.log('--- SEEDING COMPLETED SUCCESSFULLY ---');
-    console.log('Database name: naxachain on MongoDB Atlas');
-    console.log('Demo Login: Aman@nexachain.ai | password: password123');
+    console.log('Database name: tierflow on MongoDB Atlas');
+    console.log('Demo Login: Aman@tierflow.com | password: password123');
     process.exit(0);
   } catch (err) {
     console.error('Seeding error:', err);

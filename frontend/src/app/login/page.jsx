@@ -44,41 +44,27 @@ const registerSchema = z.object({
 });
 
 // ------------------------------ 3D Vector Ribbon Logo Component ------------------------------
-function NexachainRibbonLogo({ className = 'w-12 h-12' }) {
+function TierFlowRibbonLogo({ className = 'w-12 h-12' }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
-        <linearGradient id="n-cyan-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="tf-cyan-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#38BDF8" />
-          <stop offset="55%" stopColor="#0EA5E9" />
-          <stop offset="100%" stopColor="#0284C7" />
+          <stop offset="100%" stopColor="#0EA5E9" />
         </linearGradient>
-        <linearGradient id="n-mid-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0284C7" />
-          <stop offset="50%" stopColor="#0066FF" />
+        <linearGradient id="tf-blue-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0066FF" />
           <stop offset="100%" stopColor="#004AD6" />
         </linearGradient>
-        <linearGradient id="n-dark-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#2563EB" />
-          <stop offset="50%" stopColor="#1D4ED8" />
-          <stop offset="100%" stopColor="#1E3A8A" />
-        </linearGradient>
       </defs>
-      <path
-        d="M20 18 C20 15 23 13 26 14.5 L44 24.5 C46.5 25.8 48 28.3 48 31 L48 82 C48 85 45 87 42 85.5 L24 75.5 C21.5 74.2 20 71.7 20 69 Z"
-        fill="url(#n-cyan-ribbon)"
-      />
-      <path
-        d="M48 31 L78 50 C80.5 51.5 82 54 82 57 L82 82 C82 85 79 87 76 85.5 L46 66.5 Z"
-        fill="url(#n-dark-ribbon)"
-      />
-      <path
-        d="M52 18 C52 15 55 13 58 14.5 L76 24.5 C78.5 25.8 80 28.3 80 31 L80 58 C80 60.5 77.5 62.5 74.5 61 L56 50 C53.5 48.7 52 46.2 52 43.5 Z"
-        fill="url(#n-mid-ribbon)"
-      />
+      <rect x="18" y="18" width="64" height="13" rx="6.5" fill="url(#tf-cyan-ribbon)" />
+      <rect x="37" y="18" width="13.5" height="64" rx="6.5" fill="url(#tf-blue-ribbon)" />
+      <rect x="37" y="39" width="37" height="13" rx="6.5" fill="url(#tf-cyan-ribbon)" />
+      <circle cx="81" cy="45.5" r="4.5" fill="#38BDF8" />
     </svg>
   );
 }
+
 
 // ------------------------------ Main Auth Page Content ------------------------------
 function AuthContent() {
@@ -124,7 +110,7 @@ function AuthContent() {
     setLoading(true);
     try {
       await login(data.email, data.password);
-      toast.success('Welcome back to Nexachain AI!');
+      toast.success('Welcome back to TierFlow!');
       router.push(ROUTES.DASHBOARD);
     } catch (err) {
       toast.error(extractErrorMessage(err, 'Failed to log in. Please check your credentials.'));
@@ -143,7 +129,7 @@ function AuthContent() {
         password: data.password,
         referralCode: data.referralCode || undefined,
       });
-      toast.success('Registration successful! Welcome to Nexachain AI.');
+      toast.success('Registration successful! Welcome to TierFlow.');
       router.push(ROUTES.DASHBOARD);
     } catch (err) {
       toast.error(extractErrorMessage(err, 'Registration failed. Please check your information.'));
@@ -207,11 +193,11 @@ function AuthContent() {
       <div className="hidden lg:flex lg:w-[50%] xl:w-[48%] flex-col justify-between pl-8 sm:pl-12 lg:pl-16 xl:pl-20 pr-4 sm:pr-6 py-6 sm:py-8 lg:py-10 relative z-10 text-white h-full overflow-hidden">
         <div className="shrink-0">
           <div className="flex items-center gap-3">
-            <NexachainRibbonLogo className="w-11 h-11 drop-shadow-md" />
+            <TierFlowRibbonLogo className="w-11 h-11 drop-shadow-md" />
             <div>
               <div className="flex items-baseline text-[26px] font-black tracking-tight leading-none">
-                <span className="text-white">Nexachain</span>
-                <span className="text-[#1D6EFF] ml-1.5 font-black">AI</span>
+                <span className="text-white">Tier</span>
+                <span className="text-[#1D6EFF] ml-0.5 font-black">Flow</span>
               </div>
             </div>
           </div>
@@ -224,7 +210,7 @@ function AuthContent() {
           <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-black text-white leading-[1.12] tracking-tight">
             Build Your <br />
             Financial Growth <br />
-            with <span className="text-[#1D6EFF]">Nexachain AI</span>
+            with <span className="text-[#1D6EFF]">TierFlow</span>
           </h1>
 
           <p className="mt-4 text-xs sm:text-[13px] text-[#A0B6D9] leading-relaxed font-normal max-w-sm">
@@ -377,20 +363,20 @@ function AuthContent() {
       {/* ------------------------------ Right Column: Unified Floating Auth Card ------------------------------ */}
       <div className="w-full lg:w-[50%] xl:w-[52%] flex items-center justify-center pl-4 sm:pl-6 lg:pl-8 pr-6 sm:pr-10 lg:pr-16 xl:pr-20 py-4 sm:py-6 lg:py-8 relative z-10 h-full overflow-hidden">
         <div className="lg:hidden absolute top-4 left-6 flex items-center gap-2 z-20">
-          <NexachainRibbonLogo className="w-8 h-8" />
+          <TierFlowRibbonLogo className="w-8 h-8" />
           <span className="text-xl font-black text-white">
-            Nexachain <span className="text-[#0066FF]">AI</span>
+            Tier<span className="text-[#0066FF]">Flow</span>
           </span>
         </div>
 
         <div className="w-full max-w-[430px] xl:max-w-[450px] max-h-[94vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 lg:p-8 shadow-[0_25px_60px_-15px_rgba(2,15,50,0.35)] border border-white/90 my-auto transition-all">
           <div className="text-center mb-4 sm:mb-5">
             <div className="flex justify-center mb-2">
-              <NexachainRibbonLogo className="w-12 h-12 sm:w-14 sm:h-14 drop-shadow-md" />
+              <TierFlowRibbonLogo className="w-12 h-12 sm:w-14 sm:h-14 drop-shadow-md" />
             </div>
 
             <h2 className="text-2xl sm:text-[25px] font-black text-[#0B132A] tracking-tight leading-tight">
-              Nexachain <span className="text-[#0066FF]">AI</span>
+              Tier<span className="text-[#0066FF]">Flow</span>
             </h2>
 
             <div className="mt-3.5 flex items-center bg-slate-100 p-1 rounded-xl max-w-[280px] mx-auto">
@@ -417,7 +403,7 @@ function AuthContent() {
             </div>
 
             <p className="text-[10px] font-bold tracking-[0.24em] text-slate-400 uppercase mt-2.5">
-              {mode === 'login' ? 'WELCOME BACK' : 'JOIN NEXACHAIN'}
+              {mode === 'login' ? 'WELCOME BACK' : 'JOIN TIERFLOW'}
             </p>
             <p className="text-xs text-slate-500 font-normal mt-0.5">
               {mode === 'login'
@@ -635,7 +621,7 @@ function AuthContent() {
                   </div>
                   <input
                     type="text"
-                    placeholder="e.g. NXA123456"
+                    placeholder="e.g. TFL123456"
                     className="w-full py-2 pl-9 pr-3 text-xs sm:text-sm bg-transparent outline-none text-slate-800 placeholder:text-slate-400 font-mono font-medium uppercase"
                     {...signupRegister('referralCode')}
                   />
@@ -734,7 +720,7 @@ export default function LoginPage() {
     <Suspense
       fallback={
         <div className="h-screen w-screen bg-[#020B1E] flex items-center justify-center text-white text-xs">
-          Loading Nexachain AI...
+          Loading TierFlow...
         </div>
       }
     >

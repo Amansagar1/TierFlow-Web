@@ -46,7 +46,7 @@ app.use(async (req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'success',
-    service: 'Nexachain AI API',
+    service: 'TierFlow API',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
   });

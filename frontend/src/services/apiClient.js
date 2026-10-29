@@ -48,7 +48,7 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
   (config) => {
     if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('nexachain_token');
+      const token = localStorage.getItem('tierflow_token');
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -66,8 +66,8 @@ apiClient.interceptors.response.use(
       const isAuthRoute =
         window.location.pathname === '/login' || window.location.pathname === '/register';
       if (!isAuthRoute) {
-        localStorage.removeItem('nexachain_token');
-        localStorage.removeItem('nexachain_user');
+        localStorage.removeItem('tierflow_token');
+        localStorage.removeItem('tierflow_user');
         window.location.href = '/login';
       }
     }

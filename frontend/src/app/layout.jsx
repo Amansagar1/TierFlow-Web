@@ -8,8 +8,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Nexachain AI - Investment & Referral Platform</title>
-        <meta name="description" content="Next generation AI-powered investment and multi-level referral platform" />
+        <title>TierFlow - Investment & Referral Platform</title>
+        <meta name="description" content="Next generation investment and multi-level referral platform" />
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body className="bg-[#F8FAFC] text-slate-800 antialiased font-sans">

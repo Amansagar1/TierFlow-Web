@@ -1,6 +1,6 @@
-# Nexachain AI - API Documentation
+# TierFlow - API Documentation
 
-The Nexachain AI platform provides RESTful APIs for authentication, investments, dashboard analytics, automated ROI calculation, and multi-level referral hierarchy tracking.
+The TierFlow platform provides RESTful APIs for authentication, investments, dashboard analytics, automated ROI calculation, and multi-level referral hierarchy tracking.
 
 **Base URL**: `http://localhost:5000/api`
 
@@ -15,10 +15,10 @@ The Nexachain AI platform provides RESTful APIs for authentication, investments,
 ```json
 {
   "fullName": "Jane Sagar",
-  "email": "jane@nexachain.ai",
+  "email": "jane@tierflow.com",
   "mobileNumber": "+919876543210",
   "password": "password123",
-  "referralCode": "NXA123456" // Optional sponsor referral code
+  "referralCode": "TFL123456" // Optional sponsor referral code
 }
 ```
 - **Success Response (201 Created)**:
@@ -30,9 +30,9 @@ The Nexachain AI platform provides RESTful APIs for authentication, investments,
     "user": {
       "_id": "6ae20...",
       "fullName": "Jane Sagar",
-      "email": "jane@nexachain.ai",
+      "email": "jane@tierflow.com",
       "mobileNumber": "+919876543210",
-      "referralCode": "NXA998811",
+      "referralCode": "TFL998811",
       "walletBalance": 0,
       "totalRoiEarned": 0,
       "totalLevelIncomeEarned": 0,
@@ -49,7 +49,7 @@ The Nexachain AI platform provides RESTful APIs for authentication, investments,
 - **Request Body**:
 ```json
 {
-  "email": "Aman@nexachain.ai",
+  "email": "Aman@tierflow.com",
   "password": "password123"
 }
 ```

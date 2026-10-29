@@ -1,6 +1,6 @@
-# Nexachain AI - Business Rules & Architecture Document
+# TierFlow - Business Rules & Architecture Document
 
-This document outlines the business assumptions, mathematical calculations, database idempotency safeguards, and scheduling mechanics implemented in **Nexachain AI**.
+This document outlines the business assumptions, mathematical calculations, database idempotency safeguards, and scheduling mechanics implemented in **TierFlow**.
 
 ---
 

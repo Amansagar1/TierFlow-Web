@@ -22,7 +22,7 @@ export default function RootPage() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#F8FAFC]">
-      <LoadingState message="Loading Nexachain AI..." />
+      <LoadingState message="Loading TierFlow..." />
     </div>
   );
 }

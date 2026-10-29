@@ -2,7 +2,7 @@
 d:/MYMOBILEPROJECTS/
 ├── frontend/                     # Next.js Frontend with Inline Tailwind CSS
 │   ├── public/
-│   │   └── favicon.svg           # Nexachain AI branded vector icon
+│   │   └── favicon.svg           # TierFlow branded vector icon
 │   ├── src/
 │   │   ├── app/                  # Next.js App Router Pages
 │   │   │   ├── layout.jsx        # Root Layout with AuthProvider & Toaster
@@ -104,7 +104,7 @@ d:/MYMOBILEPROJECTS/
 │   │   ├── app.js                # Express Application Setup
 │   │   └── server.js             # HTTP Server & DB bootstrap
 │   ├── tests/
-│   │   └── nexachain.test.js     # Complete Automated Test Suite (Jest)
+│   │   └── tierflow.test.js     # Complete Automated Test Suite (Jest)
 │   ├── seedAtlas.js              # Atlas seeder script
 │   ├── .env                      # Backend environment settings
 │   └── package.json
@@ -116,7 +116,7 @@ d:/MYMOBILEPROJECTS/
 d:/MYMOBILEPROJECTS/
 â”œâ”€â”€ frontend/                     # Next.js Frontend with Inline Tailwind CSS
 â”‚   â”œâ”€â”€ public/
-â”‚   â”‚   â””â”€â”€ favicon.svg           # Nexachain AI branded vector icon
+â”‚   â”‚   â””â”€â”€ favicon.svg           # TierFlow branded vector icon
 â”‚   â”œâ”€â”€ src/
 â”‚   â”‚   â”œâ”€â”€ app/                  # Next.js App Router Pages
 â”‚   â”‚   â”‚   â”œâ”€â”€ layout.jsx        # Root Layout with AuthProvider & Toaster
@@ -220,7 +220,7 @@ d:/MYMOBILEPROJECTS/
 â”‚   â”‚   â”œâ”€â”€ app.js                # Express Application Setup
 â”‚   â”‚   â””â”€â”€ server.js             # HTTP Server & DB bootstrap
 â”‚   â”œâ”€â”€ tests/
-â”‚   â”‚   â””â”€â”€ nexachain.test.js     # Complete Automated Test Suite (Jest)
+â”‚   â”‚   â””â”€â”€ tierflow.test.js     # Complete Automated Test Suite (Jest)
 â”‚   â”œâ”€â”€ seedAtlas.js              # Atlas seeder script
 â”‚   â”œâ”€â”€ .env                      # Backend environment settings
 â”‚   â””â”€â”€ package.json
@@ -239,10 +239,10 @@ d:/MYMOBILEPROJECTS/
 
 ## 4. Database Setup (MongoDB Atlas)
 
-The project is connected to the **MongoDB Atlas Cluster** database `naxachain`:
+The project is connected to the **MongoDB Atlas Cluster** database `tierflow`:
 
 ```text
-mongodb+srv://<username>:<password>@cluster0.sf919.mongodb.net/naxachain?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@cluster0.sf919.mongodb.net/tierflow?retryWrites=true&w=majority
 ```
 
 All 4 collections are provisioned with unique indexes and seeded with demo evaluation data:
@@ -252,9 +252,9 @@ All 4 collections are provisioned with unique indexes and seeded with demo evalu
 - **`referralincomes`**
 
 ### Pre-configured Demo Login Credentials:
-- **Email**: `Aman@nexachain.ai` (or `john@nexachain.ai`)
+- **Email**: `Aman@tierflow.com` (or `john@tierflow.com`)
 - **Password**: `password123`
-- **Referral Code**: `NXA123456`
+- **Referral Code**: `TFL123456`
 
 ---
 
@@ -270,7 +270,7 @@ cd backend
 npm install
 npm run dev
 ```
-> The backend will connect to MongoDB Atlas database `naxachain`, verify indexes, start the Daily ROI scheduler, and listen on **`http://localhost:5000`**.
+> The backend will connect to MongoDB Atlas database `tierflow`, verify indexes, start the Daily ROI scheduler, and listen on **`http://localhost:5000`**.
 
 ### 2. Start the Next.js Frontend
 In a separate terminal:
@@ -295,19 +295,19 @@ npm run start
 Both the Express backend and the Next.js frontend are fully pre-configured for **Vercel**:
 
 ### A. Deploy Backend API to Vercel
-1. In Vercel, click **Add New** &rarr; **Project** &rarr; Select your GitHub repository (`NexachainAI-Proj`).
+1. In Vercel, click **Add New** &rarr; **Project** &rarr; Select your GitHub repository (`TierFlow-Proj`).
 2. In **Root Directory**, click *Edit* and select **`backend`**.
 3. **Environment Variables**:
-   - `MONGODB_URI`: `mongodb+srv://sagarsharmaofficial0:%40Developer%400531@cluster0.sf919.mongodb.net/naxachain?retryWrites=true&w=majority`
-   - `JWT_SECRET`: `nexachain_super_secret_jwt_key_2026_secure`
+   - `MONGODB_URI`: `mongodb+srv://sagarsharmaofficial0:%40Developer%400531@cluster0.sf919.mongodb.net/tierflow?retryWrites=true&w=majority`
+   - `JWT_SECRET`: `tierflow_super_secret_jwt_key_2026_secure`
    - `CLIENT_URL`: `https://<your-frontend-project>.vercel.app` (or `*`)
    - `ROI_TIMEZONE`: `Asia/Kolkata`
 4. Click **Deploy**.
    > **Note**: `backend/vercel.json` already contains the Vercel Serverless Function entry point (`api/index.js`) and **Vercel Cron** (`"schedule": "0 0 * * *"`) to automatically execute the 12:00 AM daily ROI calculation.
-   > Copy your deployed backend URL (e.g. `https://nexachain-backend.vercel.app`).
+   > Copy your deployed backend URL (e.g. `https://tierflow-backend.vercel.app`).
 
 ### B. Deploy Frontend Dashboard to Vercel
-1. In Vercel, click **Add New** &rarr; **Project** &rarr; Select the same repository (`NexachainAI-Proj`).
+1. In Vercel, click **Add New** &rarr; **Project** &rarr; Select the same repository (`TierFlow-Proj`).
 2. In **Root Directory**, click *Edit* and select **`frontend`**.
 3. Framework Preset: **Next.js** (auto-detected).
 4. **Environment Variables**:
@@ -405,17 +405,17 @@ npm test
 
 **Results**:
 ```text
-PASS tests/nexachain.test.js
-  Nexachain AI - Authentication & Security Tests
+PASS tests/tierflow.test.js
+  TierFlow - Authentication & Security Tests
     âˆš should register a new user successfully and return JWT (792 ms)
     âˆš should reject registration with duplicate email (172 ms)
     âˆš should authenticate user and return valid token (198 ms)
     âˆš should protect private routes from unauthenticated access (26 ms)
-  Nexachain AI - Investment & Referral Multi-Level Commission Tests
+  TierFlow - Investment & Referral Multi-Level Commission Tests
     âˆš should create investment and distribute Level 1 (5%) commission to referrer (305 ms)
     âˆš should reject investment if amount is below plan minimum (217 ms)
     âˆš should retrieve complete referral tree hierarchy for parent (255 ms)
-  Nexachain AI - Daily ROI Calculation & Idempotency Safeguards
+  TierFlow - Daily ROI Calculation & Idempotency Safeguards
     âˆš should process daily ROI and prevent duplicate execution for the same day (168 ms)
 
 Test Suites: 1 passed, 1 total
@@ -454,8 +454,8 @@ All 6 screens from the `UiDesign` folder have been faithfully reproduced using *
 | :--- | :--- | :--- |
 | `PORT` | Port for the Express backend server | `5000` |
 | `NODE_ENV` | Application runtime environment | `development` / `production` |
-| `MONGODB_URI` | MongoDB Atlas connection string | `mongodb+srv://...@cluster0.sf919.mongodb.net/naxachain` |
-| `JWT_SECRET` | Cryptographic secret for signing JWT auth tokens | `nexachain_super_secret_jwt_key_2026_secure` |
+| `MONGODB_URI` | MongoDB Atlas connection string | `mongodb+srv://...@cluster0.sf919.mongodb.net/tierflow` |
+| `JWT_SECRET` | Cryptographic secret for signing JWT auth tokens | `tierflow_super_secret_jwt_key_2026_secure` |
 | `JWT_EXPIRES_IN` | Validity lifespan of issued JWT tokens | `7d` |
 | `CLIENT_URL` | Allowed CORS frontend origin | `http://localhost:3000` |
 | `ROI_TIMEZONE` | Timezone for the daily 12:00 AM ROI cron job | `Asia/Kolkata` |

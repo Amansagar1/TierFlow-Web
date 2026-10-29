@@ -22,34 +22,19 @@ function RibbonLogo({ className = 'w-8 h-8' }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
-        <linearGradient id="sb-n-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="sb-tf-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#38BDF8" />
-          <stop offset="50%" stopColor="#0EA5E9" />
-          <stop offset="100%" stopColor="#0284C7" />
+          <stop offset="100%" stopColor="#0EA5E9" />
         </linearGradient>
-        <linearGradient id="sb-n-mid" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0284C7" />
-          <stop offset="50%" stopColor="#0066FF" />
+        <linearGradient id="sb-tf-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0066FF" />
           <stop offset="100%" stopColor="#004AD6" />
         </linearGradient>
-        <linearGradient id="sb-n-dark" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#2563EB" />
-          <stop offset="50%" stopColor="#1D4ED8" />
-          <stop offset="100%" stopColor="#1E3A8A" />
-        </linearGradient>
       </defs>
-      <path
-        d="M20 18 C20 15 23 13 26 14.5 L44 24.5 C46.5 25.8 48 28.3 48 31 L48 82 C48 85 45 87 42 85.5 L24 75.5 C21.5 74.2 20 71.7 20 69 Z"
-        fill="url(#sb-n-cyan)"
-      />
-      <path
-        d="M48 31 L78 50 C80.5 51.5 82 54 82 57 L82 82 C82 85 79 87 76 85.5 L46 66.5 Z"
-        fill="url(#sb-n-dark)"
-      />
-      <path
-        d="M52 18 C52 15 55 13 58 14.5 L76 24.5 C78.5 25.8 80 28.3 80 31 L80 58 C80 60.5 77.5 62.5 74.5 61 L56 50 C53.5 48.7 52 46.2 52 43.5 Z"
-        fill="url(#sb-n-mid)"
-      />
+      <rect x="18" y="18" width="64" height="13" rx="6.5" fill="url(#sb-tf-cyan)" />
+      <rect x="37" y="18" width="13.5" height="64" rx="6.5" fill="url(#sb-tf-blue)" />
+      <rect x="37" y="39" width="37" height="13" rx="6.5" fill="url(#sb-tf-cyan)" />
+      <circle cx="81" cy="45.5" r="4.5" fill="#38BDF8" />
     </svg>
   );
 }
@@ -82,8 +67,8 @@ export const Sidebar = ({ isMobile = false, onCloseMobile }) => {
         <Link href={ROUTES.DASHBOARD} className="flex items-center gap-2.5">
           <RibbonLogo className="w-8 h-8 drop-shadow-md" />
           <div className="flex items-baseline">
-            <span className="font-extrabold text-[19px] tracking-tight text-white">Nexachain</span>
-            <span className="font-black text-[19px] text-[#1D6EFF] ml-1">AI</span>
+            <span className="font-extrabold text-[19px] tracking-tight text-white">Tier<span className="text-[#1D6EFF]">Flow</span></span>
+
           </div>
         </Link>
 

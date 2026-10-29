@@ -51,7 +51,7 @@ export default function SettingsPage() {
   const [sessionTimeout, setSessionTimeout] = useState('30m');
   const [ipRestricted, setIpRestricted] = useState(false);
   const [apiKey, setApiKey] = useState(
-    user?._id ? `nxa_live_${user._id.toString().slice(-8)}${user.referralCode?.toLowerCase() || '00'}` : 'nxa_live_sec_key'
+    user?._id ? `tfl_live_${user._id.toString().slice(-8)}${user.referralCode?.toLowerCase() || '00'}` : 'tfl_live_sec_key'
   );
   const [copiedKey, setCopiedKey] = useState(false);
   const [isRegenerateModalOpen, setIsRegenerateModalOpen] = useState(false);
@@ -70,7 +70,7 @@ export default function SettingsPage() {
       if (s.ipRestricted !== undefined) setIpRestricted(s.ipRestricted);
       if (s.apiKey) setApiKey(s.apiKey);
     } else if (user?._id) {
-      setApiKey(`nxa_live_${user._id.toString().slice(-8)}${user.referralCode?.toLowerCase() || '00'}`);
+      setApiKey(`tfl_live_${user._id.toString().slice(-8)}${user.referralCode?.toLowerCase() || '00'}`);
     }
   }, [user]);
 
@@ -89,7 +89,7 @@ export default function SettingsPage() {
   };
 
   const handleRegenerateKey = async () => {
-    const newKey = `nxa_live_${Math.random().toString(36).substring(2, 12)}${Math.random().toString(36).substring(2, 12)}`;
+    const newKey = `tfl_live_${Math.random().toString(36).substring(2, 12)}${Math.random().toString(36).substring(2, 12)}`;
     setApiKey(newKey);
     try {
       await authApi.updateSettings({
@@ -649,7 +649,7 @@ export default function SettingsPage() {
             Account liquidation requires verifying that all active investment tenures have completed and available balances have been settled to your verified bank account.
           </p>
           <div className="p-3 bg-red-50 rounded-xl border border-red-200 text-red-900 font-medium">
-            Please contact Nexachain AI Compliance at <span className="underline">support@nexachain.ai</span> for formal account closure and capital return.
+            Please contact TierFlow Compliance at <span className="underline">support@tierflow.com</span> for formal account closure and capital return.
           </div>
           <div className="flex justify-end pt-2">
             <Button size="sm" onClick={() => setIsDangerModalOpen(false)}>

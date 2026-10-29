@@ -13,8 +13,8 @@ export const AuthProvider = ({ children }) => {
   // ------------------------------ Client Local Storage Initialization ------------------------------
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedUser = localStorage.getItem('nexachain_user');
-      const savedToken = localStorage.getItem('nexachain_token');
+      const savedUser = localStorage.getItem('tierflow_user');
+      const savedToken = localStorage.getItem('tierflow_token');
       if (savedUser) {
         try {
           setUser(JSON.parse(savedUser));
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   const loadUser = useCallback(async () => {
     if (typeof window === 'undefined') return;
 
-    const savedToken = localStorage.getItem('nexachain_token');
+    const savedToken = localStorage.getItem('tierflow_token');
     if (!savedToken) {
       setLoading(false);
       return;
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       const response = await apiClient.get('/auth/me');
       if (response.data?.data?.user) {
         setUser(response.data.data.user);
-        localStorage.setItem('nexachain_user', JSON.stringify(response.data.data.user));
+        localStorage.setItem('tierflow_user', JSON.stringify(response.data.data.user));
       }
     } catch (err) {
       console.warn('Failed to refresh user profile:', err);
@@ -63,8 +63,8 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
     setToken(authToken);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('nexachain_token', authToken);
-      localStorage.setItem('nexachain_user', JSON.stringify(userData));
+      localStorage.setItem('tierflow_token', authToken);
+      localStorage.setItem('tierflow_user', JSON.stringify(userData));
     }
     return userData;
   };
@@ -76,8 +76,8 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
     setToken(authToken);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('nexachain_token', authToken);
-      localStorage.setItem('nexachain_user', JSON.stringify(userData));
+      localStorage.setItem('tierflow_token', authToken);
+      localStorage.setItem('tierflow_user', JSON.stringify(userData));
     }
     return userData;
   };
@@ -89,8 +89,8 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setToken(null);
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('nexachain_token');
-      localStorage.removeItem('nexachain_user');
+      localStorage.removeItem('tierflow_token');
+      localStorage.removeItem('tierflow_user');
     }
   };
 
@@ -99,7 +99,7 @@ export const AuthProvider = ({ children }) => {
       if (!prev) return prev;
       const updated = { ...prev, walletBalance: newBalance };
       if (typeof window !== 'undefined') {
-        localStorage.setItem('nexachain_user', JSON.stringify(updated));
+        localStorage.setItem('tierflow_user', JSON.stringify(updated));
       }
       return updated;
     });

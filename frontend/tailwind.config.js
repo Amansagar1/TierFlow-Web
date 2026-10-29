@@ -11,7 +11,7 @@ export default {
           300: '#93c5fd',
           400: '#60a5fa',
           500: '#3b82f6',
-          600: '#0066ff', // Core Nexachain primary blue
+          600: '#0066ff', // Core TierFlow primary blue
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',

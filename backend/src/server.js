@@ -16,10 +16,10 @@ const seedDemoData = async () => {
 
       const Aman = await User.create({
         fullName: 'Aman Sagar',
-        email: 'Aman@nexachain.ai',
+        email: 'Aman@tierflow.com',
         mobileNumber: '+919876543210',
         password: 'password123',
-        referralCode: 'NXA123456',
+        referralCode: 'TFL123456',
         walletBalance: 12750,
         totalRoiEarned: 12750,
         totalLevelIncomeEarned: 4500,
@@ -28,10 +28,10 @@ const seedDemoData = async () => {
 
       const u123 = await User.create({
         fullName: 'User 123',
-        email: 'user123@nexachain.ai',
+        email: 'user123@tierflow.com',
         mobileNumber: '+919876543211',
         password: 'password123',
-        referralCode: 'NXA888123',
+        referralCode: 'TFL888123',
         referredBy: Aman._id,
         walletBalance: 1800,
         totalRoiEarned: 1200,
@@ -41,10 +41,10 @@ const seedDemoData = async () => {
 
       const u456 = await User.create({
         fullName: 'User 456',
-        email: 'user456@nexachain.ai',
+        email: 'user456@tierflow.com',
         mobileNumber: '+919876543212',
         password: 'password123',
-        referralCode: 'NXA888456',
+        referralCode: 'TFL888456',
         referredBy: Aman._id,
         walletBalance: 1200,
         totalRoiEarned: 1000,
@@ -54,10 +54,10 @@ const seedDemoData = async () => {
 
       const u789 = await User.create({
         fullName: 'User 789',
-        email: 'user789@nexachain.ai',
+        email: 'user789@tierflow.com',
         mobileNumber: '+919876543213',
         password: 'password123',
-        referralCode: 'NXA888789',
+        referralCode: 'TFL888789',
         referredBy: Aman._id,
         walletBalance: 1000,
         totalRoiEarned: 1000,
@@ -67,10 +67,10 @@ const seedDemoData = async () => {
 
       const u321 = await User.create({
         fullName: 'User 321',
-        email: 'user321@nexachain.ai',
+        email: 'user321@tierflow.com',
         mobileNumber: '+919876543214',
         password: 'password123',
-        referralCode: 'NXA888321',
+        referralCode: 'TFL888321',
         referredBy: Aman._id,
         walletBalance: 1500,
         totalRoiEarned: 1200,
@@ -80,10 +80,10 @@ const seedDemoData = async () => {
 
       const u654 = await User.create({
         fullName: 'User 654',
-        email: 'user654@nexachain.ai',
+        email: 'user654@tierflow.com',
         mobileNumber: '+919876543215',
         password: 'password123',
-        referralCode: 'NXA999654',
+        referralCode: 'TFL999654',
         referredBy: u123._id,
         walletBalance: 500,
         totalRoiEarned: 500,
@@ -93,10 +93,10 @@ const seedDemoData = async () => {
 
       const u987 = await User.create({
         fullName: 'User 987',
-        email: 'user987@nexachain.ai',
+        email: 'user987@tierflow.com',
         mobileNumber: '+919876543216',
         password: 'password123',
-        referralCode: 'NXA999987',
+        referralCode: 'TFL999987',
         referredBy: u123._id,
         walletBalance: 750,
         totalRoiEarned: 750,
@@ -106,10 +106,10 @@ const seedDemoData = async () => {
 
       await User.create({
         fullName: 'User 777',
-        email: 'user777@nexachain.ai',
+        email: 'user777@tierflow.com',
         mobileNumber: '+919876543217',
         password: 'password123',
-        referralCode: 'NXA777001',
+        referralCode: 'TFL777001',
         referredBy: u654._id,
         walletBalance: 0,
         accountStatus: 'Active',
@@ -117,10 +117,10 @@ const seedDemoData = async () => {
 
       await User.create({
         fullName: 'User 888',
-        email: 'user888@nexachain.ai',
+        email: 'user888@tierflow.com',
         mobileNumber: '+919876543218',
         password: 'password123',
-        referralCode: 'NXA888002',
+        referralCode: 'TFL888002',
         referredBy: u654._id,
         walletBalance: 100,
         accountStatus: 'Active',
@@ -165,7 +165,7 @@ const seedDemoData = async () => {
         investmentStatus: INVESTMENT_STATUS.ACTIVE,
       });
 
-      logger.info('Demo data seeded successfully. Demo credentials: Aman@nexachain.ai / password123');
+      logger.info('Demo data seeded successfully. Demo credentials: Aman@tierflow.com / password123');
     }
   } catch (err) {
     logger.warn('Error during demo data seeding:', err.message);
@@ -180,7 +180,7 @@ const startServer = async () => {
     initRoiScheduler();
 
     const server = app.listen(env.PORT, () => {
-      logger.info(`Nexachain AI Server listening on port ${env.PORT} [ENV: ${env.NODE_ENV}]`);
+      logger.info(`TierFlow Server listening on port ${env.PORT} [ENV: ${env.NODE_ENV}]`);
       logger.info(`Health check: http://localhost:${env.PORT}/api/health`);
     });
 

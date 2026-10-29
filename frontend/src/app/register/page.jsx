@@ -19,7 +19,7 @@ function RegisterRedirectContent() {
     <div className="h-screen w-screen bg-[#020B1E] flex items-center justify-center text-white text-xs select-none">
       <div className="flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
-        <span>Loading Nexachain AI Registration...</span>
+        <span>Loading TierFlow Registration...</span>
       </div>
     </div>
   );
