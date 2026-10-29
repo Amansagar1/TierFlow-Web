@@ -5,7 +5,7 @@ import { Button } from './Button';
 export const LoadingState = ({ message = 'Loading data...', minHeight = 'min-h-[250px]' }) => {
   return (
     <div className={`w-full flex flex-col items-center justify-center p-8 ${minHeight}`}>
-      <Loader2 className="w-8 h-8 text-[#0066FF] animate-spin mb-3" />
+      <Loader2 className="w-8 h-8 text-[#D97706] animate-spin mb-3" />
       <p className="text-sm font-medium text-slate-500">{message}</p>
     </div>
   );

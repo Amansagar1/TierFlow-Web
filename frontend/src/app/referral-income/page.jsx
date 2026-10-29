@@ -202,7 +202,7 @@ export default function ReferralIncomePage() {
             </div>
           </div>
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#0066FF] text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/20">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white flex items-center justify-center shrink-0 shadow-sm shadow-amber-500/20">
               <Network className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div className="flex-1 min-w-0">
@@ -227,7 +227,7 @@ export default function ReferralIncomePage() {
                 </h3>
                 <button
                   onClick={() => setWithdrawModalOpen(true)}
-                  className="bg-[#0066FF] hover:bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition-all shadow-xs flex items-center gap-1 cursor-pointer active:scale-95"
+                  className="bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition-all shadow-xs flex items-center gap-1 cursor-pointer active:scale-95"
                 >
                   <span>Withdraw</span>
                   <ArrowRight className="w-3 h-3 stroke-[2.5]" />
@@ -247,7 +247,7 @@ export default function ReferralIncomePage() {
                 </h3>
                 <div className="flex items-center gap-3.5 mt-1.5 text-xs font-medium">
                   <span className="flex items-center gap-1.5 text-slate-700">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#D97706]" />
                     Direct Income
                   </span>
                   <span className="flex items-center gap-1.5 text-slate-700">
@@ -263,7 +263,7 @@ export default function ReferralIncomePage() {
                     onClick={() => setChartPeriod(p)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                       chartPeriod === p
-                        ? 'bg-[#0066FF] text-white font-bold shadow-xs'
+                        ? 'bg-[#D97706] text-white font-bold shadow-xs'
                         : 'bg-[#F1F4F9] text-slate-600 hover:bg-slate-200/70'
                     }`}
                   >
@@ -305,7 +305,7 @@ export default function ReferralIncomePage() {
                       fontSize: '12px',
                     }}
                   />
-                  <Bar dataKey="Direct" stackId="a" fill="#0066FF" radius={[0, 0, 0, 0]} />
+                  <Bar dataKey="Direct" stackId="a" fill="#D97706" radius={[0, 0, 0, 0]} />
                   <Bar dataKey="Level" stackId="a" fill="#00C48C" radius={[3, 3, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -373,7 +373,7 @@ export default function ReferralIncomePage() {
                       setLevelFilter(e.target.value);
                       setPage(1);
                     }}
-                    className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#0066FF]"
+                    className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#D97706]"
                   >
                     <option value="All">All Levels</option>
                     <option value="L1">Level 1 (Direct)</option>
@@ -393,7 +393,7 @@ export default function ReferralIncomePage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by user, amount..."
-                    className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#0066FF] outline-none transition-all w-36 sm:w-44"
+                    className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#D97706] outline-none transition-all w-36 sm:w-44"
                   />
                 </div>
               </div>
@@ -477,7 +477,7 @@ export default function ReferralIncomePage() {
                     onClick={() => setPage(pageNum)}
                     className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold transition-all cursor-pointer ${
                       page === pageNum
-                        ? 'bg-[#0066FF] text-white shadow-xs'
+                        ? 'bg-[#D97706] text-white shadow-xs'
                         : 'border border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -503,7 +503,7 @@ export default function ReferralIncomePage() {
                 </h4>
                 <Link
                   href={ROUTES.REFERRAL_TREE}
-                  className="text-xs font-semibold text-[#0066FF] hover:underline"
+                  className="text-xs font-semibold text-[#D97706] hover:underline"
                 >
                   View All
                 </Link>
@@ -518,7 +518,7 @@ export default function ReferralIncomePage() {
                         <div
                           className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                             userItem.color === 'blue'
-                              ? 'bg-[#EBF3FF] text-[#0066FF]'
+                              ? 'bg-[#FEF3C7] text-[#D97706]'
                               : userItem.color === 'green'
                               ? 'bg-[#E8F8F0] text-[#00B074]'
                               : userItem.color === 'orange'
@@ -541,7 +541,7 @@ export default function ReferralIncomePage() {
                       <span
                         className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-semibold ${
                           userItem.level === 'Level 1'
-                            ? 'bg-[#EBF3FF] text-[#0066FF]'
+                            ? 'bg-[#FEF3C7] text-[#D97706]'
                             : userItem.level === 'Level 2'
                             ? 'bg-[#E8F8F0] text-[#00B074]'
                             : 'bg-[#F3E8FF] text-[#7B2CBF]'
@@ -556,7 +556,7 @@ export default function ReferralIncomePage() {
             </div>
             <Link
               href={ROUTES.REFERRAL_TREE}
-              className="mt-5 w-full py-2 rounded-xl border border-[#0066FF] text-[#0066FF] hover:bg-blue-50 text-xs font-bold text-center block transition-colors cursor-pointer"
+              className="mt-5 w-full py-2 rounded-xl border border-[#D97706] text-[#D97706] hover:bg-amber-50 text-xs font-bold text-center block transition-colors cursor-pointer"
             >
               View All Referrals &rarr;
             </Link>

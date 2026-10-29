@@ -39,7 +39,7 @@ export const Header = ({ onOpenMobileMenu, searchPlaceholder = 'Search investmen
           <input
             type="text"
             placeholder={searchPlaceholder}
-            className="w-full pl-9 pr-3.5 py-1.5 bg-[#F4F7FC] hover:bg-[#EEF3FA] focus:bg-white text-slate-800 text-xs sm:text-[13px] rounded-xl border border-slate-200/60 focus:border-[#0066FF] focus:ring-2 focus:ring-blue-100 outline-none transition-all placeholder:text-slate-400"
+            className="w-full pl-9 pr-3.5 py-1.5 bg-[#F4F7FC] hover:bg-[#EEF3FA] focus:bg-white text-slate-800 text-xs sm:text-[13px] rounded-xl border border-slate-200/60 focus:border-[#D97706] focus:ring-2 focus:ring-amber-100 outline-none transition-all placeholder:text-slate-400"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@ export const Header = ({ onOpenMobileMenu, searchPlaceholder = 'Search investmen
             onClick={() => setShowProfileMenu((prev) => !prev)}
             className="flex items-center gap-2.5 p-1 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-full bg-[#051336] text-white font-bold text-xs flex items-center justify-center shadow-xs">
+            <div className="w-8 h-8 rounded-full bg-[#060B18] ring-1 ring-amber-500/30 text-amber-300 font-bold text-xs flex items-center justify-center shadow-xs">
               {getInitials(user?.fullName)}
             </div>
             <div className="hidden sm:block text-left">

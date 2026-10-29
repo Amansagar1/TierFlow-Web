@@ -150,7 +150,7 @@ export default function ROIHistoryPage() {
             <button
               onClick={handleTriggerDailyCron}
               disabled={isProcessingCron}
-              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50/80 hover:bg-blue-100/70 border border-blue-200/60 rounded-xl text-xs font-semibold text-[#0066FF] transition-all cursor-pointer disabled:opacity-50"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-amber-50/80 hover:bg-amber-100/70 border border-amber-200/60 rounded-xl text-xs font-semibold text-[#D97706] transition-all cursor-pointer disabled:opacity-50"
               title="Manually trigger daily ROI check"
             >
               <Play className="w-3 h-3 fill-current" />
@@ -167,7 +167,7 @@ export default function ROIHistoryPage() {
         {/* ------------------------------ ROI Metric KPI Cards ------------------------------ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-3.5">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#0066FF] text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/20">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white flex items-center justify-center shrink-0 shadow-sm shadow-amber-500/20">
               <Coins className="w-5 h-5 stroke-[2.2]" />
             </div>
             <div className="flex-1 min-w-0">
@@ -240,7 +240,7 @@ export default function ROIHistoryPage() {
                     onClick={() => setChartPeriod(p)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                       chartPeriod === p
-                        ? 'bg-[#0066FF] text-white font-bold shadow-xs'
+                        ? 'bg-[#D97706] text-white font-bold shadow-xs'
                         : 'bg-[#F1F4F9] text-slate-600 hover:bg-slate-200/70'
                     }`}
                   >
@@ -257,8 +257,8 @@ export default function ROIHistoryPage() {
                 >
                   <defs>
                     <linearGradient id="roiTrendGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#0066FF" stopOpacity="0.18" />
-                      <stop offset="100%" stopColor="#0066FF" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="#D97706" stopOpacity="0.18" />
+                      <stop offset="100%" stopColor="#D97706" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
                   <CartesianGrid vertical={false} stroke="#F1F5F9" />
@@ -287,11 +287,11 @@ export default function ROIHistoryPage() {
                   <Area
                     type="monotone"
                     dataKey="amount"
-                    stroke="#0066FF"
+                    stroke="#D97706"
                     strokeWidth={2.5}
                     fill="url(#roiTrendGrad)"
-                    dot={{ r: 3.5, fill: '#0066FF', stroke: '#FFFFFF', strokeWidth: 1.5 }}
-                    activeDot={{ r: 5, fill: '#0066FF', stroke: '#FFFFFF', strokeWidth: 2 }}
+                    dot={{ r: 3.5, fill: '#D97706', stroke: '#FFFFFF', strokeWidth: 1.5 }}
+                    activeDot={{ r: 5, fill: '#D97706', stroke: '#FFFFFF', strokeWidth: 2 }}
                   />
                 </AreaChart>
               </ResponsiveContainer>
@@ -314,7 +314,7 @@ export default function ROIHistoryPage() {
                     {distributionData.map((entry, index) => (
                       <Cell
                         key={`cell-${index}`}
-                        fill={entry.color || (index === 0 ? '#0066FF' : index === 1 ? '#00C48C' : '#7B2CBF')}
+                        fill={entry.color || (index === 0 ? '#D97706' : index === 1 ? '#00C48C' : '#7B2CBF')}
                       />
                     ))}
                   </Pie>
@@ -337,7 +337,7 @@ export default function ROIHistoryPage() {
                       className="w-2.5 h-2.5 rounded-full shrink-0"
                       style={{
                         backgroundColor:
-                          item.color || (idx === 0 ? '#0066FF' : idx === 1 ? '#00C48C' : '#7B2CBF'),
+                          item.color || (idx === 0 ? '#D97706' : idx === 1 ? '#00C48C' : '#7B2CBF'),
                       }}
                     />
                     <span className="font-normal text-slate-700">{item.name}</span>
@@ -364,7 +364,7 @@ export default function ROIHistoryPage() {
                 <select
                   value={investmentFilter}
                   onChange={(e) => setInvestmentFilter(e.target.value)}
-                  className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#0066FF]"
+                  className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#D97706]"
                 >
                   <option value="All">All Investments</option>
                   <option value="Growth Plan A">Growth Plan A</option>
@@ -377,7 +377,7 @@ export default function ROIHistoryPage() {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#0066FF]"
+                  className="appearance-none pl-3 pr-8 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-700 font-medium outline-none cursor-pointer hover:bg-slate-50 focus:border-[#D97706]"
                 >
                   <option value="All">All Status</option>
                   <option value="Credited">Credited</option>
@@ -392,7 +392,7 @@ export default function ROIHistoryPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by date, amount..."
-                  className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#0066FF] outline-none transition-all w-44 sm:w-52"
+                  className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#D97706] outline-none transition-all w-44 sm:w-52"
                 />
               </div>
             </div>
@@ -446,7 +446,7 @@ export default function ROIHistoryPage() {
                                 isGrowthA
                                   ? 'bg-[#E8F8F0] text-[#00B074]'
                                   : isGrowthB
-                                  ? 'bg-[#EBF3FF] text-[#0066FF]'
+                                  ? 'bg-[#FEF3C7] text-[#D97706]'
                                   : isWealth
                                   ? 'bg-[#F3E8FF] text-[#7B2CBF]'
                                   : 'bg-[#FFF4E6] text-[#FF8A00]'
@@ -509,7 +509,7 @@ export default function ROIHistoryPage() {
                   onClick={() => setPage(pageNum)}
                   className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold transition-all cursor-pointer ${
                     page === pageNum
-                      ? 'bg-[#0066FF] text-white shadow-xs'
+                      ? 'bg-[#D97706] text-white shadow-xs'
                       : 'border border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >

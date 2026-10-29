@@ -2,7 +2,7 @@ import React from 'react';
 import { Loader2 } from 'lucide-react';
 
 const variants = {
-  primary: 'bg-[#0066FF] hover:bg-[#0052cc] text-white shadow-sm hover:shadow active:scale-[0.98]',
+  primary: 'bg-gradient-to-r from-[#D97706] via-[#F59E0B] to-[#D97706] hover:brightness-110 text-white font-semibold shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/35 active:scale-[0.98]',
   secondary: 'bg-slate-100 hover:bg-slate-200 text-slate-700',
   outline: 'border border-slate-200 hover:bg-slate-50 text-slate-700',
   ghost: 'text-slate-600 hover:bg-slate-100',

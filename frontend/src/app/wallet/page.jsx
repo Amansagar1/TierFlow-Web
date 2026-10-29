@@ -55,8 +55,8 @@ function CustomCashflowTooltip({ active, payload, label }) {
         </p>
         <div className="space-y-1">
           <div className="flex items-center justify-between gap-3">
-            <span className="flex items-center gap-1.5 text-blue-400">
-              <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+            <span className="flex items-center gap-1.5 text-amber-400">
+              <span className="w-2 h-2 rounded-full bg-[#D97706]" />
               Inflow:
             </span>
             <span className="font-extrabold text-white">
@@ -233,7 +233,7 @@ export default function WalletPage() {
           <div className="flex items-center gap-2 self-start sm:self-auto">
             <button
               onClick={() => setDepositModalOpen(true)}
-              className="inline-flex items-center gap-2 bg-[#0066FF] hover:bg-blue-600 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Deposit Funds</span>
@@ -251,7 +251,7 @@ export default function WalletPage() {
         {/* ------------------------------ Core KPI Metric Cards ------------------------------ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-[#0066FF] flex items-center justify-center text-white shrink-0 shadow-xs">
+            <div className="w-11 h-11 rounded-xl bg-[#D97706] flex items-center justify-center text-white shrink-0 shadow-xs">
               <Wallet className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
@@ -335,7 +335,7 @@ export default function WalletPage() {
                 <div className="flex items-center gap-3">
                   <div className="hidden sm:flex items-center gap-3 text-xs font-semibold text-slate-600">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+                      <span className="w-2 h-2 rounded-full bg-[#D97706]" />
                       Inflow
                     </span>
                     <span className="flex items-center gap-1.5">
@@ -350,7 +350,7 @@ export default function WalletPage() {
                         onClick={() => setTimeframe(t)}
                         className={`px-2 py-0.5 rounded-lg transition-all cursor-pointer ${
                           timeframe === t
-                            ? 'bg-white text-blue-600 shadow-2xs font-bold'
+                            ? 'bg-white text-[#D97706] shadow-2xs font-bold'
                             : 'hover:text-slate-900'
                         }`}
                       >
@@ -365,8 +365,8 @@ export default function WalletPage() {
                   <AreaChart data={liveCashflow} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                     <defs>
                       <linearGradient id="walletInflowGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#0066FF" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="#0066FF" stopOpacity={0.0} />
+                        <stop offset="5%" stopColor="#D97706" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="#D97706" stopOpacity={0.0} />
                       </linearGradient>
                       <linearGradient id="walletBalanceGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#00C48C" stopOpacity={0.25} />
@@ -393,7 +393,7 @@ export default function WalletPage() {
                       type="monotone"
                       dataKey="inflow"
                       name="Inflow"
-                      stroke="#0066FF"
+                      stroke="#D97706"
                       strokeWidth={2}
                       fillOpacity={1}
                       fill="url(#walletInflowGrad)"
@@ -428,7 +428,7 @@ export default function WalletPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search transactions..."
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500"
                   />
                 </div>
               </div>
@@ -445,7 +445,7 @@ export default function WalletPage() {
                     onClick={() => setActiveTab(tab.key)}
                     className={`px-3 py-1 rounded-xl font-semibold whitespace-nowrap transition-all cursor-pointer ${
                       activeTab === tab.key
-                        ? 'bg-blue-50 text-blue-600 border border-blue-200'
+                        ? 'bg-amber-50 text-[#D97706] border border-amber-200'
                         : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
                     }`}
                   >
@@ -500,7 +500,7 @@ export default function WalletPage() {
                                     : txn.category === 'referral'
                                     ? 'bg-purple-50 text-purple-700 border border-purple-100'
                                     : txn.category === 'deposit'
-                                    ? 'bg-blue-50 text-blue-700 border border-blue-100'
+                                    ? 'bg-amber-50 text-amber-700 border border-blue-100'
                                     : 'bg-amber-50 text-amber-700 border border-amber-100'
                                 }`}
                               >
@@ -548,7 +548,7 @@ export default function WalletPage() {
                   >
                     <ChevronLeft className="w-3.5 h-3.5" />
                   </button>
-                  <span className="px-2.5 py-0.5 text-[11px] font-bold text-blue-600 bg-blue-50 rounded-md">
+                  <span className="px-2.5 py-0.5 text-[11px] font-bold text-[#D97706] bg-amber-50 rounded-md">
                     {page}
                   </span>
                   <button
@@ -565,21 +565,21 @@ export default function WalletPage() {
 
           {/* ------------------------------ Right Column: Virtual Card, Limits & Bank Payout ------------------------------ */}
           <div className="col-span-12 lg:col-span-4 space-y-3.5 sm:space-y-4">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0B1528] via-[#102A43] to-[#0D3880] p-5 text-white shadow-md border border-slate-800">
-              <div className="absolute -right-12 -top-12 w-44 h-44 bg-blue-500/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#12151E] via-[#211B10] to-[#0D1017] p-5 text-white shadow-xl shadow-amber-950/40 border border-amber-500/30">
+              <div className="absolute -right-12 -top-12 w-44 h-44 bg-amber-500/20 rounded-full blur-2xl pointer-events-none" />
               <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
 
               <div className="relative z-10 flex items-center justify-between mb-6">
                 <div>
                   <h4 className="font-extrabold text-sm tracking-wide text-white">
-                    Tier<span className="text-blue-400">Flow</span>
+                    Tier<span className="text-amber-400 font-black">Flow</span>
                   </h4>
                   <p className="text-[9px] text-slate-400 tracking-wider uppercase font-semibold">
                     Fintech Digital Wallet
                   </p>
                 </div>
                 <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-xs">
-                  <CreditCard className="w-3.5 h-3.5 text-blue-300" />
+                  <CreditCard className="w-3.5 h-3.5 text-amber-300" />
                 </div>
               </div>
               <div className="relative z-10 w-9 h-6 rounded-md bg-gradient-to-br from-amber-200 via-amber-400 to-amber-500 border border-amber-300/60 shadow-xs mb-4 flex items-center justify-around px-1">
@@ -620,7 +620,7 @@ export default function WalletPage() {
                 </div>
                 <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                   <div
-                    className="bg-[#0066FF] h-full rounded-full transition-all duration-300"
+                    className="bg-[#D97706] h-full rounded-full transition-all duration-300"
                     style={{ width: `${Math.min(100, (totalWithdrawn / 50000) * 100)}%` }}
                   />
                 </div>
@@ -631,7 +631,7 @@ export default function WalletPage() {
               <div className="grid grid-cols-2 gap-2.5">
                 <button
                   onClick={() => setDepositModalOpen(true)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#0066FF] hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+                  className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   Deposit
@@ -652,7 +652,7 @@ export default function WalletPage() {
                 </h3>
                 <button
                   onClick={() => setBankModalOpen(true)}
-                  className="text-[11px] font-semibold text-blue-600 border border-slate-200 hover:bg-slate-50 rounded-lg px-2.5 py-0.5 transition-colors cursor-pointer"
+                  className="text-[11px] font-semibold text-[#D97706] border border-slate-200 hover:bg-slate-50 rounded-lg px-2.5 py-0.5 transition-colors cursor-pointer"
                 >
                   Edit
                 </button>
@@ -661,7 +661,7 @@ export default function WalletPage() {
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-100 text-[#0066FF] flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-[#D97706] flex items-center justify-center">
                       <Building className="w-4 h-4" />
                     </div>
                     <div>
@@ -724,7 +724,7 @@ export default function WalletPage() {
                   onClick={() => setDepositAmount(amt)}
                   className={`py-1.5 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                     depositAmount === amt
-                      ? 'bg-blue-50 border-blue-600 text-blue-600'
+                      ? 'bg-amber-50 border-blue-600 text-[#D97706]'
                       : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
@@ -759,7 +759,7 @@ export default function WalletPage() {
                     onClick={() => setDepositMethod(m.key)}
                     className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
                       depositMethod === m.key
-                        ? 'bg-blue-50 border-blue-600 text-blue-600 font-bold'
+                        ? 'bg-amber-50 border-blue-600 text-[#D97706] font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -771,9 +771,9 @@ export default function WalletPage() {
             </div>
           </div>
 
-          <div className="p-3 bg-blue-50/70 rounded-xl border border-blue-100 flex items-center justify-between text-xs">
+          <div className="p-3 bg-amber-50/70 rounded-xl border border-blue-100 flex items-center justify-between text-xs">
             <span className="text-slate-600 font-medium">Estimated Credit Time:</span>
-            <span className="font-bold text-blue-700">Instant (0% Fee)</span>
+            <span className="font-bold text-amber-700">Instant (0% Fee)</span>
           </div>
 
           <div className="flex justify-end gap-2.5 pt-2">
@@ -839,7 +839,7 @@ export default function WalletPage() {
             </div>
             <div className="flex items-center justify-between text-xs pt-1 border-t border-slate-200 font-bold">
               <span className="text-slate-800">Net Settlement:</span>
-              <span className="text-blue-600">{formatINR(Number(withdrawAmount) || 0)}</span>
+              <span className="text-[#D97706]">{formatINR(Number(withdrawAmount) || 0)}</span>
             </div>
           </div>
 

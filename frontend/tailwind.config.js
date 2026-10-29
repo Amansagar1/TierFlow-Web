@@ -5,18 +5,22 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#0066ff', // Core TierFlow primary blue
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          navy: '#0B132B',
-          dark: '#080E1E',
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706', // Primary Imperial Gold
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          gold: '#d97706',
+          champagne: '#fde68a',
+          amber: '#f59e0b',
+          obsidian: '#050811',
+          navy: '#070C18',
+          dark: '#0B1222',
         },
       },
       fontFamily: {

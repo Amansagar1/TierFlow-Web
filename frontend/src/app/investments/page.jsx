@@ -35,7 +35,7 @@ import { extractErrorMessage } from '../../utils/errorHandler';
 
 const PLAN_STYLES = {
   'growth-a': { themeColor: '#00B074', themeBg: '#E8F8F0', iconType: 'sprout' },
-  'growth-b': { themeColor: '#0066FF', themeBg: '#EBF3FF', iconType: 'trending' },
+  'growth-b': { themeColor: '#D97706', themeBg: '#FEF3C7', iconType: 'trending' },
   'wealth': { themeColor: '#7B2CBF', themeBg: '#F3E8FF', iconType: 'diamond' },
   'premium': { themeColor: '#FF7A00', themeBg: '#FFF4E6', iconType: 'star' },
 };
@@ -80,7 +80,7 @@ export default function InvestmentsPage() {
       setPlans(
         apiPlans.map((p) => {
           const style = PLAN_STYLES[p.id] || {
-            themeColor: p.color || '#0066FF',
+            themeColor: p.color || '#D97706',
             themeBg: '#EBF3FF',
             iconType: 'trending',
           };
@@ -184,7 +184,7 @@ export default function InvestmentsPage() {
             </div>
             <button
               onClick={() => setAddFundsOpen(true)}
-              className="ml-2 bg-[#0066FF] hover:bg-blue-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer active:scale-95"
+              className="ml-2 bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer active:scale-95"
             >
               Add Funds
             </button>
@@ -204,7 +204,7 @@ export default function InvestmentsPage() {
             </div>
             <button
               onClick={() => plans.length > 0 && handleOpenInvestModal(plans[0])}
-              className="text-xs font-semibold text-[#0066FF] hover:underline flex items-center gap-1 cursor-pointer"
+              className="text-xs font-semibold text-[#D97706] hover:underline flex items-center gap-1 cursor-pointer"
             >
               <span>View Plan Details</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -219,12 +219,12 @@ export default function InvestmentsPage() {
                   key={plan.id}
                   className={`bg-white rounded-2xl p-4 sm:p-4.5 shadow-xs transition-all duration-150 flex flex-col justify-between relative ${
                     isPopular
-                      ? 'border-2 border-[#0066FF]'
+                      ? 'border-2 border-[#D97706]'
                       : 'border border-slate-100 hover:border-slate-200'
                   }`}
                 >
                   {isPopular && (
-                    <span className="absolute top-3.5 right-3.5 inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 bg-[#0066FF] text-white rounded-md shadow-xs">
+                    <span className="absolute top-3.5 right-3.5 inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 bg-[#D97706] text-white rounded-md shadow-xs">
                       <Crown className="w-3 h-3" /> Popular
                     </span>
                   )}
@@ -244,7 +244,7 @@ export default function InvestmentsPage() {
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
                           {isPopular ? (
                             <>
-                              Growth <span className="text-[#0066FF]">Plan B</span>
+                              Growth <span className="text-[#D97706]">Plan B</span>
                             </>
                           ) : (
                             plan.name
@@ -294,7 +294,7 @@ export default function InvestmentsPage() {
                     onClick={() => handleOpenInvestModal(plan)}
                     className="w-full mt-2.5 py-2 px-3 rounded-xl text-white text-xs font-bold transition-all shadow-xs active:scale-[0.98] cursor-pointer"
                     style={{
-                      backgroundColor: plan.themeColor || '#0066FF',
+                      backgroundColor: plan.themeColor || '#D97706',
                     }}
                   >
                     Invest Now
@@ -319,7 +319,7 @@ export default function InvestmentsPage() {
 
             <button
               onClick={() => handleOpenInvestModal(plans[1] || plans[0])}
-              className="bg-[#0066FF] hover:bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition-all shadow-xs cursor-pointer active:scale-95"
+              className="bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition-all shadow-xs cursor-pointer active:scale-95"
             >
               <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
               <span>New Investment</span>
@@ -343,7 +343,7 @@ export default function InvestmentsPage() {
                     }}
                     className={`px-3 py-1 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                       isActive
-                        ? 'bg-[#EAF2FF] text-[#0066FF] border border-blue-200/80 font-bold'
+                        ? 'bg-[#FEF3C7] text-[#D97706] border border-amber-200/80 font-bold'
                         : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
                     }`}
                   >
@@ -368,7 +368,7 @@ export default function InvestmentsPage() {
                     setPage(1);
                   }}
                   placeholder="Search investments..."
-                  className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#0066FF] outline-none transition-all w-44 sm:w-52"
+                  className="pl-8 pr-3 py-1.5 text-xs bg-[#F9FAFC] border border-slate-200/70 rounded-xl text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-[#D97706] outline-none transition-all w-44 sm:w-52"
                 />
               </div>
             </div>
@@ -420,7 +420,7 @@ export default function InvestmentsPage() {
                                   isGrowthA
                                     ? 'bg-[#E8F8F0] text-[#00B074]'
                                     : isGrowthB
-                                    ? 'bg-[#EBF3FF] text-[#0066FF]'
+                                    ? 'bg-[#FEF3C7] text-[#D97706]'
                                     : isWealth
                                     ? 'bg-[#F3E8FF] text-[#7B2CBF]'
                                     : 'bg-[#FFF4E6] text-[#FF8A00]'
@@ -460,7 +460,7 @@ export default function InvestmentsPage() {
                                 isActive
                                   ? 'bg-[#E8F8F0] text-[#00B074]'
                                   : isCompleted
-                                  ? 'bg-[#EBF3FF] text-[#0066FF]'
+                                  ? 'bg-[#FEF3C7] text-[#D97706]'
                                   : 'bg-[#FEECEC] text-[#FF3B30]'
                               }`}
                             >
@@ -474,7 +474,7 @@ export default function InvestmentsPage() {
                                   setViewingInvestment(inv);
                                   setDetailsModalOpen(true);
                                 }}
-                                className="p-1 hover:text-[#0066FF] hover:bg-blue-50 rounded-md transition-colors cursor-pointer"
+                                className="p-1 hover:text-[#D97706] hover:bg-amber-50 rounded-md transition-colors cursor-pointer"
                                 title="View Details"
                               >
                                 <Eye className="w-3.5 h-3.5" />
@@ -519,7 +519,7 @@ export default function InvestmentsPage() {
                 <ChevronLeft className="w-3.5 h-3.5" />
               </button>
 
-              <button className="w-7 h-7 rounded-lg bg-[#0066FF] text-white flex items-center justify-center text-xs font-bold shadow-xs">
+              <button className="w-7 h-7 rounded-lg bg-[#D97706] text-white flex items-center justify-center text-xs font-bold shadow-xs">
                 {page}
               </button>
 
@@ -568,7 +568,7 @@ export default function InvestmentsPage() {
             required
           />
           {Number(investAmount) > 0 && selectedPlan && (
-            <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 text-xs space-y-1.5">
+            <div className="p-4 rounded-2xl bg-amber-50/60 border border-blue-100 text-xs space-y-1.5">
               <p className="font-bold text-blue-900">Projected Returns:</p>
               <div className="flex justify-between text-blue-800">
                 <span>Daily ROI Return:</span>
@@ -651,7 +651,7 @@ export default function InvestmentsPage() {
                     viewingInvestment.investmentStatus === 'ACTIVE'
                       ? 'bg-[#E8F8F0] text-[#00B074]'
                       : viewingInvestment.investmentStatus === 'COMPLETED'
-                      ? 'bg-[#EBF3FF] text-[#0066FF]'
+                      ? 'bg-[#FEF3C7] text-[#D97706]'
                       : 'bg-[#FEECEC] text-[#FF3B30]'
                   }`}
                 >

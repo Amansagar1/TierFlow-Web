@@ -19,7 +19,7 @@ const INVESTMENT_PLANS = {
     durationDays: 120,
     minInvestment: 5000,
     popular: true,
-    color: '#0066FF',
+    color: '#D97706',
   },
   WEALTH: {
     id: 'wealth',

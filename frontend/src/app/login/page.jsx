@@ -48,19 +48,20 @@ function TierFlowRibbonLogo({ className = 'w-12 h-12' }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
-        <linearGradient id="tf-cyan-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#38BDF8" />
-          <stop offset="100%" stopColor="#0EA5E9" />
+        <linearGradient id="tf-gold-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FDE68A" />
+          <stop offset="50%" stopColor="#F59E0B" />
+          <stop offset="100%" stopColor="#D97706" />
         </linearGradient>
-        <linearGradient id="tf-blue-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0066FF" />
-          <stop offset="100%" stopColor="#004AD6" />
+        <linearGradient id="tf-bronze-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#D97706" />
+          <stop offset="100%" stopColor="#92400E" />
         </linearGradient>
       </defs>
-      <rect x="18" y="18" width="64" height="13" rx="6.5" fill="url(#tf-cyan-ribbon)" />
-      <rect x="37" y="18" width="13.5" height="64" rx="6.5" fill="url(#tf-blue-ribbon)" />
-      <rect x="37" y="39" width="37" height="13" rx="6.5" fill="url(#tf-cyan-ribbon)" />
-      <circle cx="81" cy="45.5" r="4.5" fill="#38BDF8" />
+      <rect x="18" y="18" width="64" height="13" rx="6.5" fill="url(#tf-gold-ribbon)" />
+      <rect x="37" y="18" width="13.5" height="64" rx="6.5" fill="url(#tf-bronze-ribbon)" />
+      <rect x="37" y="39" width="37" height="13" rx="6.5" fill="url(#tf-gold-ribbon)" />
+      <circle cx="81" cy="45.5" r="4.5" fill="#FDE68A" />
     </svg>
   );
 }
@@ -139,17 +140,17 @@ function AuthContent() {
   };
 
   return (
-    <div className="h-screen w-screen max-h-screen overflow-hidden relative bg-[#020B1E] flex flex-col lg:flex-row select-none">
+    <div className="h-screen w-screen max-h-screen overflow-hidden relative bg-[#050811] flex flex-col lg:flex-row select-none">
       {/* ------------------------------ Premium Fintech Ambient Background ------------------------------ */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#020B1E]">
-        <div className="absolute -top-32 -left-32 w-[650px] h-[650px] bg-[#0066FF]/25 rounded-full blur-[140px]" />
-        <div className="absolute top-1/4 left-1/3 w-[550px] h-[550px] bg-[#0EA5E9]/15 rounded-full blur-[150px]" />
-        <div className="absolute -bottom-32 right-0 w-[700px] h-[700px] bg-[#1D4ED8]/20 rounded-full blur-[160px]" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#050811]">
+        <div className="absolute -top-32 -left-32 w-[650px] h-[650px] bg-[#D97706]/20 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 left-1/3 w-[550px] h-[550px] bg-[#F59E0B]/15 rounded-full blur-[150px]" />
+        <div className="absolute -bottom-32 right-0 w-[700px] h-[700px] bg-[#92400E]/20 rounded-full blur-[160px]" />
 
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage: 'radial-gradient(#38BDF8 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(#F59E0B 1px, transparent 1px)',
             backgroundSize: '24px 24px',
           }}
         />
@@ -176,14 +177,14 @@ function AuthContent() {
           />
           <defs>
             <linearGradient id="silk-glow-1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0066FF" stopOpacity="0.4" />
-              <stop offset="50%" stopColor="#0EA5E9" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="#FDE68A" stopOpacity="0.45" />
+              <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#D97706" stopOpacity="0.1" />
             </linearGradient>
             <linearGradient id="silk-glow-2" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.35" />
-              <stop offset="60%" stopColor="#0284C7" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="#D97706" stopOpacity="0.35" />
+              <stop offset="60%" stopColor="#B45309" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#78350F" stopOpacity="0.08" />
             </linearGradient>
           </defs>
         </svg>
@@ -197,11 +198,11 @@ function AuthContent() {
             <div>
               <div className="flex items-baseline text-[26px] font-black tracking-tight leading-none">
                 <span className="text-white">Tier</span>
-                <span className="text-[#1D6EFF] ml-0.5 font-black">Flow</span>
+                <span className="text-[#F59E0B] ml-0.5 font-black">Flow</span>
               </div>
             </div>
           </div>
-          <p className="text-[10px] font-bold text-[#8EA8D6] tracking-[0.24em] uppercase mt-2 pl-0.5">
+          <p className="text-[10px] font-bold text-amber-200/70 tracking-[0.24em] uppercase mt-2 pl-0.5">
             INVEST · EARN · GROW TOGETHER
           </p>
         </div>
@@ -210,56 +211,56 @@ function AuthContent() {
           <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-black text-white leading-[1.12] tracking-tight">
             Build Your <br />
             Financial Growth <br />
-            with <span className="text-[#1D6EFF]">TierFlow</span>
+            with <span className="text-[#F59E0B]">TierFlow</span>
           </h1>
 
-          <p className="mt-4 text-xs sm:text-[13px] text-[#A0B6D9] leading-relaxed font-normal max-w-sm">
+          <p className="mt-4 text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal max-w-sm">
             A secure investment and referral platform designed for long-term growth. Invest, earn
             daily ROI and build your network.
           </p>
 
           <div className="mt-6 grid grid-cols-2 gap-3 max-w-md">
-            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#092254]/75 border border-blue-400/15 backdrop-blur-md shadow-sm">
-              <div className="w-9 h-9 rounded-xl bg-[#0C2D6E] text-[#1E74FF] flex items-center justify-center shrink-0 shadow-inner">
+            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#0C1220]/80 border border-amber-500/20 backdrop-blur-md shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#1E170C] text-[#F59E0B] border border-amber-500/30 flex items-center justify-center shrink-0 shadow-inner">
                 <BarChart2 className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-bold text-white leading-tight">Daily ROI</p>
-                <p className="text-[11px] font-medium text-[#8EA8D6] leading-tight mt-0.5">Earnings</p>
+                <p className="text-[11px] font-medium text-amber-200/70 leading-tight mt-0.5">Earnings</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#092254]/75 border border-blue-400/15 backdrop-blur-md shadow-sm">
-              <div className="w-9 h-9 rounded-xl bg-[#0C2D6E] text-[#1E74FF] flex items-center justify-center shrink-0 shadow-inner">
+            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#0C1220]/80 border border-amber-500/20 backdrop-blur-md shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#1E170C] text-[#F59E0B] border border-amber-500/30 flex items-center justify-center shrink-0 shadow-inner">
                 <Users className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-bold text-white leading-tight">Multi-Level</p>
-                <p className="text-[11px] font-medium text-[#8EA8D6] leading-tight mt-0.5">
+                <p className="text-[11px] font-medium text-amber-200/70 leading-tight mt-0.5">
                   Referral Income
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#092254]/75 border border-blue-400/15 backdrop-blur-md shadow-sm">
-              <div className="w-9 h-9 rounded-xl bg-[#0C2D6E] text-[#1E74FF] flex items-center justify-center shrink-0 shadow-inner">
+            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#0C1220]/80 border border-amber-500/20 backdrop-blur-md shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#1E170C] text-[#F59E0B] border border-amber-500/30 flex items-center justify-center shrink-0 shadow-inner">
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-bold text-white leading-tight">Secure &</p>
-                <p className="text-[11px] font-medium text-[#8EA8D6] leading-tight mt-0.5">
+                <p className="text-[11px] font-medium text-amber-200/70 leading-tight mt-0.5">
                   Transparent
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#092254]/75 border border-blue-400/15 backdrop-blur-md shadow-sm">
-              <div className="w-9 h-9 rounded-xl bg-[#0C2D6E] text-[#1E74FF] flex items-center justify-center shrink-0 shadow-inner">
+            <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-2xl bg-[#0C1220]/80 border border-amber-500/20 backdrop-blur-md shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#1E170C] text-[#F59E0B] border border-amber-500/30 flex items-center justify-center shrink-0 shadow-inner">
                 <Wallet className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-bold text-white leading-tight">Track Your</p>
-                <p className="text-[11px] font-medium text-[#8EA8D6] leading-tight mt-0.5">
+                <p className="text-[11px] font-medium text-amber-200/70 leading-tight mt-0.5">
                   Investments
                 </p>
               </div>
@@ -365,7 +366,7 @@ function AuthContent() {
         <div className="lg:hidden absolute top-4 left-6 flex items-center gap-2 z-20">
           <TierFlowRibbonLogo className="w-8 h-8" />
           <span className="text-xl font-black text-white">
-            Tier<span className="text-[#0066FF]">Flow</span>
+            Tier<span className="text-[#D97706]">Flow</span>
           </span>
         </div>
 
@@ -376,7 +377,7 @@ function AuthContent() {
             </div>
 
             <h2 className="text-2xl sm:text-[25px] font-black text-[#0B132A] tracking-tight leading-tight">
-              Tier<span className="text-[#0066FF]">Flow</span>
+              Tier<span className="text-[#D97706]">Flow</span>
             </h2>
 
             <div className="mt-3.5 flex items-center bg-slate-100 p-1 rounded-xl max-w-[280px] mx-auto">
@@ -420,7 +421,7 @@ function AuthContent() {
                 <div
                   className={`relative flex items-center rounded-xl border bg-white transition-all ${loginErrors.email
                     ? 'border-rose-400 ring-2 ring-rose-100'
-                    : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                    : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                     }`}
                 >
                   <div className="absolute left-3.5 text-slate-400 pointer-events-none">
@@ -443,7 +444,7 @@ function AuthContent() {
                 <div
                   className={`relative flex items-center rounded-xl border bg-white transition-all ${loginErrors.password
                     ? 'border-rose-400 ring-2 ring-rose-100'
-                    : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                    : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                     }`}
                 >
                   <div className="absolute left-3.5 text-slate-400 pointer-events-none">
@@ -477,7 +478,7 @@ function AuthContent() {
                         icon: 'ℹ️',
                       });
                     }}
-                    className="text-[11px] font-semibold text-[#0066FF] hover:underline"
+                    className="text-[11px] font-semibold text-[#D97706] hover:underline"
                   >
                     Forgot Password?
                   </a>
@@ -487,7 +488,7 @@ function AuthContent() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-1.5 py-2.5 sm:py-3 px-4 bg-[#0066FF] hover:bg-[#0051D6] text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:opacity-60 cursor-pointer"
+                className="w-full mt-1.5 py-2.5 sm:py-3 px-4 bg-gradient-to-r from-[#D97706] via-[#F59E0B] to-[#D97706] hover:brightness-110 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:opacity-60 cursor-pointer"
               >
                 {loading ? (
                   <span>Logging in...</span>
@@ -507,7 +508,7 @@ function AuthContent() {
                 <div
                   className={`relative flex items-center rounded-xl border bg-white transition-all ${signupErrors.fullName
                     ? 'border-rose-400 ring-2 ring-rose-100'
-                    : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                    : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                     }`}
                 >
                   <div className="absolute left-3 text-slate-400 pointer-events-none">
@@ -533,7 +534,7 @@ function AuthContent() {
                   <div
                     className={`relative flex items-center rounded-xl border bg-white transition-all ${signupErrors.email
                       ? 'border-rose-400 ring-2 ring-rose-100'
-                      : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                      : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                       }`}
                   >
                     <div className="absolute left-2.5 text-slate-400 pointer-events-none">
@@ -558,7 +559,7 @@ function AuthContent() {
                   <div
                     className={`relative flex items-center rounded-xl border bg-white transition-all ${signupErrors.mobileNumber
                       ? 'border-rose-400 ring-2 ring-rose-100'
-                      : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                      : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                       }`}
                   >
                     <div className="absolute left-2.5 text-slate-400 pointer-events-none">
@@ -584,7 +585,7 @@ function AuthContent() {
                 <div
                   className={`relative flex items-center rounded-xl border bg-white transition-all ${signupErrors.password
                     ? 'border-rose-400 ring-2 ring-rose-100'
-                    : 'border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100'
+                    : 'border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100'
                     }`}
                 >
                   <div className="absolute left-3 text-slate-400 pointer-events-none">
@@ -615,7 +616,7 @@ function AuthContent() {
                 <label className="block text-xs font-semibold text-slate-800 mb-0.5">
                   Referral Code <span className="text-slate-400 font-normal">(Optional)</span>
                 </label>
-                <div className="relative flex items-center rounded-xl border border-slate-200 focus-within:border-[#0066FF] focus-within:ring-2 focus-within:ring-blue-100 bg-white transition-all">
+                <div className="relative flex items-center rounded-xl border border-slate-200 focus-within:border-[#D97706] focus-within:ring-2 focus-within:ring-amber-100 bg-white transition-all">
                   <div className="absolute left-3 text-slate-400 pointer-events-none">
                     <Tag className="w-4 h-4" />
                   </div>
@@ -631,7 +632,7 @@ function AuthContent() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-2 py-2.5 sm:py-3 px-4 bg-[#0066FF] hover:bg-[#0051D6] text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:opacity-60 cursor-pointer"
+                className="w-full mt-2 py-2.5 sm:py-3 px-4 bg-gradient-to-r from-[#D97706] via-[#F59E0B] to-[#D97706] hover:brightness-110 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:opacity-60 cursor-pointer"
               >
                 {loading ? (
                   <span>Creating Account...</span>
@@ -690,7 +691,7 @@ function AuthContent() {
                 <button
                   type="button"
                   onClick={() => setMode('register')}
-                  className="font-bold text-[#0066FF] hover:underline ml-1 cursor-pointer"
+                  className="font-bold text-[#D97706] hover:underline ml-1 cursor-pointer"
                 >
                   Register
                 </button>
@@ -701,7 +702,7 @@ function AuthContent() {
                 <button
                   type="button"
                   onClick={() => setMode('login')}
-                  className="font-bold text-[#0066FF] hover:underline ml-1 cursor-pointer"
+                  className="font-bold text-[#D97706] hover:underline ml-1 cursor-pointer"
                 >
                   Sign In
                 </button>
@@ -719,7 +720,7 @@ export default function LoginPage() {
   return (
     <Suspense
       fallback={
-        <div className="h-screen w-screen bg-[#020B1E] flex items-center justify-center text-white text-xs">
+        <div className="h-screen w-screen bg-[#050811] flex items-center justify-center text-white text-xs">
           Loading TierFlow...
         </div>
       }

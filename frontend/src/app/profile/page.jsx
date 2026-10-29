@@ -181,7 +181,7 @@ export default function ProfilePage() {
           <div className="flex items-center gap-2 self-start sm:self-auto">
             <button
               onClick={() => setIsEditModalOpen(true)}
-              className="inline-flex items-center gap-2 bg-[#0066FF] hover:bg-blue-600 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
             >
               <Edit2 className="w-3.5 h-3.5" />
               <span>Edit Profile</span>
@@ -213,7 +213,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-[#0066FF] flex items-center justify-center text-white shrink-0 shadow-xs">
+            <div className="w-11 h-11 rounded-xl bg-[#D97706] flex items-center justify-center text-white shrink-0 shadow-xs">
               <TrendingUp className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -261,7 +261,7 @@ export default function ProfilePage() {
           {/* ------------------------------ Left Column: Identity Banner & Tabs ------------------------------ */}
           <div className="col-span-12 lg:col-span-8 space-y-3.5 sm:space-y-4">
             <div className="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
-              <div className="h-24 sm:h-28 bg-gradient-to-r from-[#0066FF] via-[#0A4CC0] to-[#00C48C] relative p-4 flex items-end">
+              <div className="h-24 sm:h-28 bg-gradient-to-r from-[#D97706] via-[#B45309] to-[#059669] relative p-4 flex items-end">
                 <div className="absolute right-4 top-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-white text-[10px] font-bold border border-white/20">
                   Investor ID: #{referralCode || 'TFL-0000'}
                 </div>
@@ -269,7 +269,7 @@ export default function ProfilePage() {
               <div className="px-5 pb-5 pt-0 relative">
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-10 sm:-mt-12 mb-4">
                   <div className="flex items-end gap-3.5">
-                    <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl bg-gradient-to-br from-[#0B1528] to-[#1E293B] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border-4 border-white shrink-0">
+                    <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl bg-gradient-to-br from-[#070C18] to-[#1F180D] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border-4 border-white shrink-0">
                       {(profileData.fullName || user?.fullName || 'U').slice(0, 2).toUpperCase()}
                     </div>
                     <div>
@@ -287,9 +287,9 @@ export default function ProfilePage() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 bg-blue-50/80 border border-blue-200 px-3 py-1.5 rounded-xl self-start sm:self-auto">
+                  <div className="flex items-center gap-2 bg-amber-50/80 border border-amber-200 px-3 py-1.5 rounded-xl self-start sm:self-auto">
                     <div className="text-left">
-                      <span className="text-[9px] uppercase tracking-wider font-bold text-blue-600 block">
+                      <span className="text-[9px] uppercase tracking-wider font-bold text-amber-700 block">
                         Referral Code
                       </span>
                       <span className="font-extrabold text-xs text-slate-900 font-mono tracking-wider">
@@ -298,7 +298,7 @@ export default function ProfilePage() {
                     </div>
                     <button
                       onClick={handleCopyCode}
-                      className="p-1 text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
+                      className="p-1 text-amber-700 hover:text-amber-800 transition-colors cursor-pointer"
                       title="Copy Code"
                     >
                       {copiedCode ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
@@ -315,7 +315,7 @@ export default function ProfilePage() {
                       key={tab.key}
                       onClick={() => setActiveTab(tab.key)}
                       className={`pb-2.5 px-3 font-semibold transition-all cursor-pointer relative ${activeTab === tab.key
-                        ? 'text-blue-600 font-bold border-b-2 border-blue-600'
+                        ? 'text-amber-600 font-bold border-b-2 border-amber-600'
                         : 'text-slate-500 hover:text-slate-900'
                         }`}
                     >
@@ -437,7 +437,7 @@ export default function ProfilePage() {
                       </div>
                       <button
                         onClick={() => setIsPasswordModalOpen(true)}
-                        className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
+                        className="text-xs font-semibold text-amber-700 hover:underline cursor-pointer"
                       >
                         Change
                       </button>
@@ -488,18 +488,18 @@ export default function ProfilePage() {
                 </div>
                 <Link
                   href="/referral-tree"
-                  className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
+                  className="text-xs font-semibold text-amber-700 hover:underline cursor-pointer"
                 >
                   View Full Tree →
                 </Link>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
-                <div className="p-3 rounded-xl bg-blue-50/60 border border-blue-100">
-                  <span className="text-[10px] font-bold text-blue-600 block mb-0.5">
+                <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-100">
+                  <span className="text-[10px] font-bold text-amber-700 block mb-0.5">
                     Level 1 Direct Bonus
                   </span>
-                  <p className="text-lg font-extrabold text-blue-900">5.0%</p>
+                  <p className="text-lg font-extrabold text-amber-900">5.0%</p>
                   <p className="text-[10px] text-slate-500 mt-0.5">From direct invites</p>
                 </div>
 
@@ -524,7 +524,7 @@ export default function ProfilePage() {
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                     Your Exclusive Referral Invitation URL
                   </span>
-                  <span className="text-xs text-blue-600 font-mono font-medium truncate block">
+                  <span className="text-xs text-amber-700 font-mono font-medium truncate block">
                     {referralLink}
                   </span>
                 </div>
@@ -597,7 +597,7 @@ export default function ProfilePage() {
                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-100 text-[#0066FF] flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-lg bg-amber-100 text-[#D97706] flex items-center justify-center">
                         <Laptop className="w-3.5 h-3.5" />
                       </div>
                       <div>

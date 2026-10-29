@@ -43,7 +43,7 @@ export const Input = forwardRef(
               ${
                 error
                   ? 'border-rose-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-100'
-                  : 'border-slate-200 focus:border-[#0066FF] focus:ring-2 focus:ring-blue-100'
+                  : 'border-slate-200 focus:border-[#D97706] focus:ring-2 focus:ring-amber-100'
               }
               ${className}`}
             {...props}

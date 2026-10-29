@@ -205,7 +205,7 @@ export default function SettingsPage() {
             <button
               onClick={handleSaveAll}
               disabled={saving}
-              className="inline-flex items-center gap-1.5 bg-[#0066FF] hover:bg-blue-600 disabled:opacity-50 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#D97706] to-[#F59E0B] hover:brightness-110 disabled:opacity-50 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-all shadow-xs cursor-pointer"
             >
               <Check className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Changes'}</span>
@@ -216,7 +216,7 @@ export default function SettingsPage() {
         {/* ------------------------------ Settings Metric KPI Cards ------------------------------ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-[#0066FF] flex items-center justify-center text-white shrink-0 shadow-xs">
+            <div className="w-11 h-11 rounded-xl bg-[#D97706] flex items-center justify-center text-white shrink-0 shadow-xs">
               <Bell className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -224,7 +224,7 @@ export default function SettingsPage() {
               <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-tight">
                 {Object.values(notifications).filter(Boolean).length} Active
               </h3>
-              <p className="text-[10px] text-blue-600 font-semibold mt-0.5">
+              <p className="text-[10px] text-amber-700 font-semibold mt-0.5">
                 Email, SMS & Push Active
               </p>
             </div>
@@ -291,7 +291,7 @@ export default function SettingsPage() {
                     Control how and when you receive real-time financial alerts and account activity.
                   </p>
                 </div>
-                <span className="bg-blue-50 text-blue-600 border border-blue-100 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                <span className="bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-md">
                   Real-Time
                 </span>
               </div>
@@ -313,7 +313,7 @@ export default function SettingsPage() {
                       onChange={() => toggleNotification('roiAlerts')}
                       className="sr-only peer"
                     />
-                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
                 <div className="flex items-center justify-between py-3">
@@ -332,7 +332,7 @@ export default function SettingsPage() {
                       onChange={() => toggleNotification('referralAlerts')}
                       className="sr-only peer"
                     />
-                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
                 <div className="flex items-center justify-between py-3">
@@ -351,7 +351,7 @@ export default function SettingsPage() {
                       onChange={() => toggleNotification('walletAlerts')}
                       className="sr-only peer"
                     />
-                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
                 <div className="flex items-center justify-between py-3">
@@ -370,7 +370,7 @@ export default function SettingsPage() {
                       onChange={() => toggleNotification('securityAlerts')}
                       className="sr-only peer"
                     />
-                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
                 <div className="flex items-center justify-between py-3">
@@ -389,7 +389,7 @@ export default function SettingsPage() {
                       onChange={() => toggleNotification('weeklyDigest')}
                       className="sr-only peer"
                     />
-                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-10 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4.5 after:w-4.5 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
               </div>
@@ -412,7 +412,7 @@ export default function SettingsPage() {
                   <select
                     value={currency}
                     onChange={(e) => setCurrency(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-blue-500 cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-amber-500 cursor-pointer"
                   >
                     <option value="INR">₹ INR (Indian Rupee - Official)</option>
                     <option value="USD">$ USD (US Dollar)</option>
@@ -427,7 +427,7 @@ export default function SettingsPage() {
                   <select
                     value={timezone}
                     onChange={(e) => setTimezone(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-blue-500 cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-amber-500 cursor-pointer"
                   >
                     <option value="Asia/Kolkata">Asia/Kolkata (IST - GMT+5:30)</option>
                     <option value="Asia/Dubai">Asia/Dubai (GST - GMT+4:00)</option>
@@ -442,7 +442,7 @@ export default function SettingsPage() {
                   <select
                     value={dateFormat}
                     onChange={(e) => setDateFormat(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-blue-500 cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:border-amber-500 cursor-pointer"
                   >
                     <option value="DD/MM/YYYY">DD/MM/YYYY (e.g. 30/10/2024)</option>
                     <option value="MM/DD/YYYY">MM/DD/YYYY (e.g. 10/30/2024)</option>
@@ -459,7 +459,7 @@ export default function SettingsPage() {
                       onClick={() => setTheme('light')}
                       className={`py-2 px-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                         theme === 'light'
-                          ? 'bg-blue-50 border-blue-600 text-blue-600'
+                          ? 'bg-amber-50 border-amber-600 text-amber-700'
                           : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                       }`}
                     >
@@ -474,7 +474,7 @@ export default function SettingsPage() {
                       }}
                       className={`py-2 px-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                         theme === 'dark'
-                          ? 'bg-blue-50 border-blue-600 text-blue-600'
+                          ? 'bg-amber-50 border-amber-600 text-amber-700'
                           : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                       }`}
                     >
@@ -516,7 +516,7 @@ export default function SettingsPage() {
             <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <Key className="w-4 h-4 text-blue-600" />
+                  <Key className="w-4 h-4 text-amber-700" />
                   <h3 className="text-xs sm:text-sm font-bold text-slate-900">
                     API & Webhooks
                   </h3>
@@ -535,7 +535,7 @@ export default function SettingsPage() {
                 </span>
                 <button
                   onClick={handleCopyKey}
-                  className="p-1 text-blue-600 hover:text-blue-800 transition-colors cursor-pointer shrink-0"
+                  className="p-1 text-amber-700 hover:text-amber-800 transition-colors cursor-pointer shrink-0"
                   title="Copy API Key"
                 >
                   {copiedKey ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
@@ -566,7 +566,7 @@ export default function SettingsPage() {
                   <select
                     value={sessionTimeout}
                     onChange={(e) => setSessionTimeout(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:border-blue-500 cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:border-amber-500 cursor-pointer"
                   >
                     <option value="15m">15 Minutes of Inactivity</option>
                     <option value="30m">30 Minutes (Recommended)</option>
@@ -586,7 +586,7 @@ export default function SettingsPage() {
                       onChange={() => setIpRestricted(!ipRestricted)}
                       className="sr-only peer"
                     />
-                    <div className="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#0066FF]" />
+                    <div className="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#D97706]" />
                   </label>
                 </div>
               </div>

@@ -39,10 +39,10 @@ import { formatDate } from '../../utils/date';
 
 const RootNodeComponent = ({ data }) => {
   return (
-    <div className="w-[290px] bg-white border-2 border-blue-400 rounded-2xl p-3.5 shadow-sm text-center relative select-none">
+    <div className="w-[290px] bg-white border-2 border-amber-400 rounded-2xl p-3.5 shadow-sm text-center relative select-none">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full bg-[#0066FF] text-white flex items-center justify-center font-bold shadow-xs">
+          <div className="w-9 h-9 rounded-full bg-[#D97706] text-white flex items-center justify-center font-bold shadow-xs">
             <User className="w-4 h-4 text-white" />
           </div>
           <div className="text-left">
@@ -52,7 +52,7 @@ const RootNodeComponent = ({ data }) => {
             <p className="text-[11px] text-slate-400 font-mono mt-0.5">{data.code}</p>
           </div>
         </div>
-        <span className="bg-blue-50 text-blue-600 border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+        <span className="bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
           Level 0
         </span>
       </div>
@@ -83,21 +83,21 @@ const RootNodeComponent = ({ data }) => {
 
 const Level1NodeComponent = ({ data }) => {
   return (
-    <div className="w-[148px] bg-[#F0F6FF] border border-blue-200 rounded-2xl p-3 text-center shadow-xs select-none hover:border-blue-400 transition-colors">
+    <div className="w-[148px] bg-[#FFFBEB] border border-amber-200 rounded-2xl p-3 text-center shadow-xs select-none hover:border-amber-400 transition-colors">
       <Handle
         type="target"
         position={Position.Top}
         className="!opacity-0 !w-0 !h-0 !border-0 !bg-transparent"
       />
 
-      <div className="w-7 h-7 rounded-full bg-[#0066FF] text-white flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
+      <div className="w-7 h-7 rounded-full bg-[#D97706] text-white flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
         <User className="w-3.5 h-3.5 text-white" />
       </div>
       <h5 className="font-bold text-xs text-slate-900 leading-tight">{data.name}</h5>
-      <span className="bg-blue-100 text-blue-700 text-[9px] font-semibold px-2 py-0.5 rounded-full inline-block mt-0.5">
+      <span className="bg-amber-100 text-amber-800 text-[9px] font-semibold px-2 py-0.5 rounded-full inline-block mt-0.5">
         Level 1
       </span>
-      <div className="mt-2 pt-2 border-t border-blue-200/60 text-[10px] space-y-0.5">
+      <div className="mt-2 pt-2 border-t border-amber-200/60 text-[10px] space-y-0.5">
         <p className="text-slate-500 font-medium">{data.referrals} Referrals</p>
         <p className="font-extrabold text-slate-900">{formatINR(data.earned)} Earned</p>
       </div>
@@ -263,7 +263,7 @@ function generateFlowFromTree(treeData, user) {
       target: l1Id,
       type: 'smoothstep',
       pathOptions: { borderRadius: 16 },
-      style: { stroke: '#0066FF', strokeDasharray: '4 4', strokeWidth: 1.5 },
+      style: { stroke: '#D97706', strokeDasharray: '4 4', strokeWidth: 1.5 },
     });
 
     const level2 = l1Child.children || [];
@@ -376,7 +376,7 @@ function TreeFlowCanvas({ dynamicNodes, dynamicEdges }) {
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-600">
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+              <span className="w-2 h-2 rounded-full bg-[#D97706]" />
               Level 1
             </span>
             <span className="flex items-center gap-1.5">
@@ -496,7 +496,7 @@ export default function ReferralTreePage() {
         name: u.fullName || u.email?.split('@')[0] || `User`,
         joined: `Joined ${formatDate(u.createdAt)}`,
         status: u.accountStatus || 'Active',
-        avatarBg: i % 3 === 0 ? 'bg-[#0066FF]' : i % 3 === 1 ? 'bg-[#FF8A00]' : 'bg-[#00C48C]',
+        avatarBg: i % 3 === 0 ? 'bg-[#D97706]' : i % 3 === 1 ? 'bg-[#FF8A00]' : 'bg-[#00C48C]',
       }));
     }
     return [];
@@ -509,7 +509,7 @@ export default function ReferralTreePage() {
         level: 'Level 1 (Direct)',
         count: `${b[0]?.users ?? 0} Users`,
         amount: b[0]?.income ?? 0,
-        dotColor: 'bg-[#0066FF]',
+        dotColor: 'bg-[#D97706]',
       },
       {
         level: 'Level 2',
@@ -620,7 +620,7 @@ export default function ReferralTreePage() {
         {/* ------------------------------ Referral Metrics & KPI Cards ------------------------------ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-[#0066FF] flex items-center justify-center text-white shrink-0 shadow-xs">
+            <div className="w-11 h-11 rounded-2xl bg-[#D97706] flex items-center justify-center text-white shrink-0 shadow-xs">
               <Users className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -698,7 +698,7 @@ export default function ReferralTreePage() {
                 </h3>
                 <button
                   onClick={() => setIsEditModalOpen(true)}
-                  className="text-[11px] font-semibold text-blue-600 border border-slate-200 hover:bg-slate-50 rounded-lg px-2.5 py-0.5 transition-colors cursor-pointer"
+                  className="text-[11px] font-semibold text-amber-700 border border-slate-200 hover:bg-slate-50 rounded-lg px-2.5 py-0.5 transition-colors cursor-pointer"
                 >
                   Edit
                 </button>
@@ -706,13 +706,13 @@ export default function ReferralTreePage() {
 
               <div>
                 <p className="text-[10px] font-medium text-slate-500 mb-1">Your Referral Code</p>
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/70 border border-blue-100">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-amber-50/70 border border-amber-100">
                   <span className="font-extrabold text-slate-900 tracking-wider text-xs">
                     {referralCode}
                   </span>
                   <button
                     onClick={handleCopyCode}
-                    className="p-1 text-blue-600 hover:text-blue-700 transition-colors cursor-pointer"
+                    className="p-1 text-amber-700 hover:text-amber-800 transition-colors cursor-pointer"
                     title="Copy Referral Code"
                   >
                     {copiedCode ? (
@@ -726,13 +726,13 @@ export default function ReferralTreePage() {
 
               <div className="mt-2.5">
                 <p className="text-[10px] font-medium text-slate-500 mb-1">Referral Link</p>
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/70 border border-blue-100">
-                  <span className="text-[11px] text-blue-600 font-medium truncate mr-2 font-mono">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-amber-50/70 border border-amber-100">
+                  <span className="text-[11px] text-amber-700 font-medium truncate mr-2 font-mono">
                     {referralLink}
                   </span>
                   <button
                     onClick={handleCopyLink}
-                    className="p-1 text-blue-600 hover:text-blue-700 transition-colors cursor-pointer shrink-0"
+                    className="p-1 text-amber-700 hover:text-amber-800 transition-colors cursor-pointer shrink-0"
                     title="Copy Referral Link"
                   >
                     {copiedLink ? (
@@ -752,7 +752,7 @@ export default function ReferralTreePage() {
                 </h3>
                 <Link
                   href="/referral-income"
-                  className="text-[11px] font-semibold text-blue-600 hover:underline cursor-pointer"
+                  className="text-[11px] font-semibold text-amber-700 hover:underline cursor-pointer"
                 >
                   View All
                 </Link>

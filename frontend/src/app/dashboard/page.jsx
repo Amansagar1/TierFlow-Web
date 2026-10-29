@@ -117,7 +117,7 @@ export default function DashboardPage() {
                 </div>
                 <button
                   onClick={handleCopyCode}
-                  className="p-1 rounded-lg text-[#0066FF] hover:bg-blue-100/70 transition-transform active:scale-95 cursor-pointer ml-0.5"
+                  className="p-1 rounded-lg text-[#D97706] hover:bg-amber-100/70 transition-transform active:scale-95 cursor-pointer ml-0.5"
                   title="Copy code"
                 >
                   {copiedCode ? (
@@ -128,7 +128,7 @@ export default function DashboardPage() {
                 </button>
               </div>
               <div className="flex items-center gap-2.5 px-3.5 py-1.5 bg-white border border-slate-100 rounded-xl shadow-xs">
-                <div className="w-8 h-8 rounded-full bg-blue-50 text-[#0066FF] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-full bg-amber-50 text-[#D97706] flex items-center justify-center shrink-0">
                   <Users className="w-4 h-4" />
                 </div>
                 <div>
@@ -149,7 +149,7 @@ export default function DashboardPage() {
               className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs hover:shadow-sm transition-all cursor-pointer flex flex-col justify-between"
             >
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0066FF] text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/20">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white flex items-center justify-center shrink-0 shadow-sm shadow-amber-500/20">
                   <Coins className="w-5 h-5 stroke-[2.2]" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -258,7 +258,7 @@ export default function DashboardPage() {
                     </h3>
                     <div className="flex items-center gap-3.5 text-xs font-medium">
                       <span className="flex items-center gap-1.5 text-slate-700">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#D97706]" />
                         ROI Earnings
                       </span>
                       <span className="flex items-center gap-1.5 text-slate-700">
@@ -274,7 +274,7 @@ export default function DashboardPage() {
                         onClick={() => setChartPeriod(p)}
                         className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                           chartPeriod === p
-                            ? 'bg-[#0066FF] text-white font-bold shadow-xs'
+                            ? 'bg-[#D97706] text-white font-bold shadow-xs'
                             : 'bg-[#F1F4F9] text-slate-600 hover:bg-slate-200/70'
                         }`}
                       >
@@ -291,8 +291,8 @@ export default function DashboardPage() {
                     >
                       <defs>
                         <linearGradient id="roi-grad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#0066FF" stopOpacity="0.18" />
-                          <stop offset="100%" stopColor="#0066FF" stopOpacity="0.0" />
+                          <stop offset="0%" stopColor="#D97706" stopOpacity="0.18" />
+                          <stop offset="100%" stopColor="#D97706" stopOpacity="0.0" />
                         </linearGradient>
                         <linearGradient id="ref-grad" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#00C48C" stopOpacity="0.18" />
@@ -328,11 +328,11 @@ export default function DashboardPage() {
                       <Area
                         type="monotone"
                         dataKey="roiEarnings"
-                        stroke="#0066FF"
+                        stroke="#D97706"
                         strokeWidth={2.5}
                         fill="url(#roi-grad)"
                         dot={false}
-                        activeDot={{ r: 4, fill: '#0066FF', stroke: '#fff', strokeWidth: 2 }}
+                        activeDot={{ r: 4, fill: '#D97706', stroke: '#fff', strokeWidth: 2 }}
                       />
                       <Area
                         type="monotone"
@@ -354,14 +354,14 @@ export default function DashboardPage() {
                   </h3>
                   <Link
                     href={ROUTES.REFERRAL_TREE}
-                    className="text-xs font-semibold text-[#0066FF] hover:underline"
+                    className="text-xs font-semibold text-[#D97706] hover:underline"
                   >
                     View Tree
                   </Link>
                 </div>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-3.5">
                   <div className="p-2 sm:p-2.5 rounded-xl bg-[#F0F5FF] flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-100 text-[#0066FF] flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-[#D97706] flex items-center justify-center shrink-0">
                       <Users className="w-3.5 h-3.5" />
                     </div>
                     <div>
@@ -403,7 +403,7 @@ export default function DashboardPage() {
                   </div>
                 </div>
                 <div className="p-3 sm:p-4 rounded-xl bg-[#F9FBFC] border border-slate-100 flex flex-col items-center">
-                  <div className="px-4 py-1.5 rounded-2xl bg-[#0066FF] text-white flex items-center gap-2 shadow-xs">
+                  <div className="px-4 py-1.5 rounded-2xl bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white flex items-center gap-2 shadow-xs">
                     <div className="w-5 h-5 rounded-full bg-white/25 flex items-center justify-center text-white">
                       <User className="w-3 h-3" />
                     </div>
@@ -460,7 +460,7 @@ export default function DashboardPage() {
                   <h4 className="text-sm font-bold text-slate-900">Recent Investments</h4>
                   <Link
                     href={ROUTES.INVESTMENTS}
-                    className="text-xs font-semibold text-[#0066FF] hover:underline"
+                    className="text-xs font-semibold text-[#D97706] hover:underline"
                   >
                     View All
                   </Link>
@@ -496,7 +496,7 @@ export default function DashboardPage() {
                                   className={`inline-block px-2.5 py-0.5 rounded-md text-[11px] font-semibold ${
                                     isActive
                                       ? 'bg-[#E8F8F0] text-[#00B074]'
-                                      : 'bg-[#EBF3FF] text-[#0066FF]'
+                                      : 'bg-[#FEF3C7] text-[#D97706]'
                                   }`}
                                 >
                                   {inv.status || 'Active'}
@@ -521,7 +521,7 @@ export default function DashboardPage() {
                   <h4 className="text-sm font-bold text-slate-900">Recent Earnings</h4>
                   <Link
                     href={ROUTES.ROI_HISTORY}
-                    className="text-xs font-semibold text-[#0066FF] hover:underline"
+                    className="text-xs font-semibold text-[#D97706] hover:underline"
                   >
                     View All
                   </Link>
@@ -546,7 +546,7 @@ export default function DashboardPage() {
                                 <div
                                   className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
                                     earn.type?.includes('ROI')
-                                      ? 'bg-[#EBF3FF] text-[#0066FF]'
+                                      ? 'bg-[#FEF3C7] text-[#D97706]'
                                       : 'bg-[#FFF4E6] text-[#FF8A00]'
                                   }`}
                                 >
@@ -582,7 +582,7 @@ export default function DashboardPage() {
                   <h4 className="text-sm font-bold text-slate-900">Investment Plans</h4>
                   <Link
                     href={ROUTES.INVESTMENTS}
-                    className="text-xs font-semibold text-[#0066FF] hover:underline"
+                    className="text-xs font-semibold text-[#D97706] hover:underline"
                   >
                     View All
                   </Link>
@@ -619,7 +619,7 @@ export default function DashboardPage() {
                       </div>
                       <button
                         onClick={() => router.push(ROUTES.INVESTMENTS)}
-                        className="mt-3 w-full py-1.5 px-3 rounded-xl border border-[#0066FF] text-[#0066FF] hover:bg-blue-50 text-xs font-bold transition-colors cursor-pointer text-center block"
+                        className="mt-3 w-full py-1.5 px-3 rounded-xl border border-[#D97706] text-[#D97706] hover:bg-amber-50 text-xs font-bold transition-colors cursor-pointer text-center block"
                       >
                         Invest Now
                       </button>
