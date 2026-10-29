@@ -3,6 +3,7 @@ const WalletTransaction = require('../models/WalletTransaction');
 const ROIHistory = require('../models/ROIHistory');
 const ReferralIncome = require('../models/ReferralIncome');
 const AppError = require('../utils/AppError');
+const notificationService = require('./notificationService');
 
 // ------------------------------ Deposit Capital to Wallet ------------------------------
 const depositFunds = async (userId, { amount, method = 'UPI' }) => {
@@ -31,6 +32,15 @@ const depositFunds = async (userId, { amount, method = 'UPI' }) => {
     { $inc: { walletBalance: numericAmount } },
     { new: true }
   );
+
+  notificationService.createNotification({
+    userId,
+    title: 'Deposit Successful',
+    message: `₹${numericAmount.toLocaleString()} has been added to your TierFlow wallet via ${method}.`,
+    type: 'wallet',
+    amount: numericAmount,
+    actionUrl: '/wallet',
+  });
 
   return { transaction: txn, walletBalance: updatedUser.walletBalance };
 };
@@ -71,6 +81,15 @@ const withdrawFunds = async (userId, { amount, destination = 'Verified Bank Payo
     { $inc: { walletBalance: -numericAmount } },
     { new: true }
   );
+
+  notificationService.createNotification({
+    userId,
+    title: 'Withdrawal Processed',
+    message: `₹${numericAmount.toLocaleString()} withdrawal has been processed to ${destination}.`,
+    type: 'wallet',
+    amount: numericAmount,
+    actionUrl: '/wallet',
+  });
 
   return { transaction: txn, walletBalance: updatedUser.walletBalance };
 };
@@ -174,4 +193,5 @@ module.exports = {
   getTransactions,
   getWalletOverview,
 };
+
 

@@ -5,6 +5,7 @@ const Investment = require('./src/models/Investment');
 const ROIHistory = require('./src/models/ROIHistory');
 const ReferralIncome = require('./src/models/ReferralIncome');
 const WalletTransaction = require('./src/models/WalletTransaction');
+const Notification = require('./src/models/Notification');
 const { INVESTMENT_PLANS, INVESTMENT_STATUS, ROI_STATUS, REFERRAL_INCOME_TYPE } = require('./src/constants/businessRules');
 
 const seedAtlas = async () => {
@@ -21,6 +22,7 @@ const seedAtlas = async () => {
       ROIHistory.deleteMany({}),
       ReferralIncome.deleteMany({}),
       WalletTransaction.deleteMany({}),
+      Notification.deleteMany({}),
     ]);
 
     // Helper to generate dates relative to now
@@ -585,6 +587,70 @@ const seedAtlas = async () => {
       await WalletTransaction.create({
         user: Aman._id,
         ...txn,
+      });
+    }
+
+    console.log('Seeding demo notifications for Aman...');
+    const demoNotifications = [
+      {
+        title: 'Daily ROI Payout Credited',
+        message: '₹375.00 has been credited to your TierFlow wallet for Growth Plan A (1.5% Daily ROI).',
+        type: 'roi',
+        amount: 375,
+        isRead: false,
+        actionUrl: '/roi-history',
+        createdAt: daysAgo(0, 10, 0),
+      },
+      {
+        title: 'Level 1 Referral Bonus Received',
+        message: 'You earned ₹1,000.00 direct referral commission from user123\'s investment in TierFlow.',
+        type: 'referral',
+        amount: 1000,
+        isRead: false,
+        actionUrl: '/referrals',
+        createdAt: daysAgo(0, 8, 30),
+      },
+      {
+        title: 'Capital Deposit Confirmed',
+        message: '₹10,000.00 deposited successfully via Google Pay UPI into your TierFlow vault balance.',
+        type: 'wallet',
+        amount: 10000,
+        isRead: true,
+        actionUrl: '/wallet',
+        createdAt: daysAgo(1, 14, 15),
+      },
+      {
+        title: 'Level 2 Referral Bonus Received',
+        message: '₹400.00 team tier commission credited from Level 2 partner activation.',
+        type: 'referral',
+        amount: 400,
+        isRead: false,
+        actionUrl: '/referrals',
+        createdAt: daysAgo(1, 16, 45),
+      },
+      {
+        title: 'Investment Active & Earning',
+        message: 'Your ₹25,000 investment in Growth Tier B is active and generating automated yields.',
+        type: 'investment',
+        amount: 25000,
+        isRead: true,
+        actionUrl: '/investments',
+        createdAt: daysAgo(3, 11, 20),
+      },
+      {
+        title: 'Security Login Verified',
+        message: 'Authorized sign-in from New Delhi, India on Chrome Desktop. Two-Factor authentication active.',
+        type: 'security',
+        isRead: true,
+        actionUrl: '/settings',
+        createdAt: daysAgo(4, 9, 0),
+      },
+    ];
+
+    for (const notif of demoNotifications) {
+      await Notification.create({
+        user: Aman._id,
+        ...notif,
       });
     }
 

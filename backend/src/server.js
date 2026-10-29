@@ -5,6 +5,7 @@ const { initRoiScheduler } = require('./jobs/roiScheduler');
 const logger = require('./utils/logger');
 const User = require('./models/User');
 const Investment = require('./models/Investment');
+const Notification = require('./models/Notification');
 const { INVESTMENT_PLANS, INVESTMENT_STATUS } = require('./constants/businessRules');
 
 // ------------------------------ Initial Data Seeder ------------------------------
@@ -164,6 +165,36 @@ const seedDemoData = async () => {
         totalRoiEarned: 5625,
         investmentStatus: INVESTMENT_STATUS.ACTIVE,
       });
+
+      await Notification.create([
+        {
+          user: Aman._id,
+          title: 'Daily ROI Payout Credited',
+          message: '₹375.00 has been credited to your TierFlow wallet for Growth Plan A.',
+          type: 'roi',
+          amount: 375,
+          isRead: false,
+          actionUrl: '/roi-history',
+        },
+        {
+          user: Aman._id,
+          title: 'Level 1 Referral Bonus Received',
+          message: 'You earned ₹1,000.00 direct referral commission from user123.',
+          type: 'referral',
+          amount: 1000,
+          isRead: false,
+          actionUrl: '/referrals',
+        },
+        {
+          user: Aman._id,
+          title: 'Capital Deposit Confirmed',
+          message: '₹10,000.00 deposited successfully via Google Pay UPI.',
+          type: 'wallet',
+          amount: 10000,
+          isRead: true,
+          actionUrl: '/wallet',
+        },
+      ]);
 
       logger.info('Demo data seeded successfully. Demo credentials: Aman@tierflow.com / password123');
     }

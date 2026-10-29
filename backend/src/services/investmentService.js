@@ -2,6 +2,7 @@ const Investment = require('../models/Investment');
 const User = require('../models/User');
 const { INVESTMENT_PLANS, INVESTMENT_STATUS } = require('../constants/businessRules');
 const { distributeReferralCommissions } = require('./referralService');
+const notificationService = require('./notificationService');
 const AppError = require('../utils/AppError');
 const logger = require('../utils/logger');
 
@@ -51,6 +52,16 @@ const createInvestment = async (userId, { planId, amount }) => {
   });
 
   logger.info(`New investment created: ID ${investment._id}, Amount: ₹${numericAmount} by User ${userId}`);
+
+  // Safely trigger notification
+  notificationService.createNotification({
+    userId,
+    title: 'Investment Activated',
+    message: `Your ₹${numericAmount.toLocaleString()} investment in ${plan.name} is active and earning ${plan.dailyRoiPercentage}% daily ROI.`,
+    type: 'investment',
+    amount: numericAmount,
+    actionUrl: '/investments',
+  });
 
   try {
     await distributeReferralCommissions(investment);
