@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, Search, Bell, ChevronDown, User, LogOut } from 'lucide-react';
+import { Menu, Search, ChevronDown, User, LogOut } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { ROUTES } from '../../constants/routes';
+import { NotificationDropdown } from './NotificationDropdown';
 
 export const Header = ({ onOpenMobileMenu, searchPlaceholder = 'Search investments, users, etc...' }) => {
   const { user, logout } = useAuth();
@@ -46,10 +47,7 @@ export const Header = ({ onOpenMobileMenu, searchPlaceholder = 'Search investmen
 
       {/* ------------------------------ Notifications & User Profile ------------------------------ */}
       <div className="flex items-center gap-3 sm:gap-4 pl-3">
-        <button className="relative p-1.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-          <Bell className="w-[18px] h-[18px]" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#FF3B30] rounded-full ring-2 ring-white" />
-        </button>
+        <NotificationDropdown />
 
         <div className="relative">
           <button

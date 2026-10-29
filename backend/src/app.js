@@ -18,6 +18,7 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 const roiRoutes = require('./routes/roiRoutes');
 const referralRoutes = require('./routes/referralRoutes');
 const walletRoutes = require('./routes/walletRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 app.use(helmet());
@@ -60,6 +61,7 @@ app.use('/api/roi-history', roiRoutes);
 app.use('/api/roi', roiRoutes);
 app.use('/api/referrals', referralRoutes);
 app.use('/api/wallet', walletRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // ------------------------------ Error Handling ------------------------------
 app.use(notFound);

@@ -6,6 +6,7 @@ const {
   MAX_REFERRAL_DEPTH,
   REFERRAL_INCOME_TYPE,
 } = require('../constants/businessRules');
+const notificationService = require('./notificationService');
 const logger = require('../utils/logger');
 
 // ------------------------------ Distribute Multi-Level Referral Commissions ------------------------------
@@ -70,6 +71,16 @@ const distributeReferralCommissions = async (investment, session = null) => {
 
               distributedCommissions.push(record[0]);
               logger.info(`Credited Level ${level} referral income of ₹${commissionAmount} to user ${parentUser._id}`);
+
+              // Notify sponsor of referral reward
+              notificationService.createNotification({
+                userId: parentUser._id,
+                title: `Level ${level} Referral Bonus Credited`,
+                message: `You earned ₹${commissionAmount.toLocaleString()} bonus from ${investor.fullName || 'team member'}'s investment in TierFlow.`,
+                type: 'referral',
+                amount: commissionAmount,
+                actionUrl: '/referrals',
+              });
             }
           } catch (err) {
             if (err.code === 11000) {

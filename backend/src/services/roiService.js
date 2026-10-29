@@ -3,6 +3,7 @@ const User = require('../models/User');
 const Investment = require('../models/Investment');
 const ROIHistory = require('../models/ROIHistory');
 const { INVESTMENT_STATUS, ROI_STATUS } = require('../constants/businessRules');
+const notificationService = require('./notificationService');
 const logger = require('../utils/logger');
 
 // ------------------------------ Helper: Format Date String ------------------------------
@@ -43,6 +44,13 @@ const processDailyROI = async (targetDate = new Date()) => {
         investment.investmentStatus = INVESTMENT_STATUS.COMPLETED;
         await investment.save();
         completed++;
+        notificationService.createNotification({
+          userId: investment.user._id,
+          title: 'Investment Matured',
+          message: `Your ${investment.planDetails?.planName || 'investment'} has completed its tenure. Total ROI earned: ₹${(investment.totalRoiEarned || 0).toLocaleString()}.`,
+          type: 'investment',
+          actionUrl: '/investments',
+        });
         continue;
       }
       if (now < investment.startDate) {
@@ -95,6 +103,16 @@ const processDailyROI = async (targetDate = new Date()) => {
 
       credited++;
       totalAmountCredited += calculatedRoi;
+
+      // Safe notification for ROI payout
+      notificationService.createNotification({
+        userId: investment.user._id,
+        title: 'Daily ROI Credited',
+        message: `₹${calculatedRoi.toLocaleString()} ROI earnings credited for ${investment.planDetails?.planName || 'Plan'}.`,
+        type: 'roi',
+        amount: calculatedRoi,
+        actionUrl: '/roi-history',
+      });
     } catch (err) {
       logger.error(`Error processing ROI for investment ${investment._id}:`, err);
       errors.push({ investmentId: investment._id, error: err.message });

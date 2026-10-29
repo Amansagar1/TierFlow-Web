@@ -6,8 +6,6 @@ backend/node_modules/
 .pnp.js
 
 # Environment variables
-.env
-.env.local
 .env.*.local
 *.env
 
@@ -27,7 +25,6 @@ yarn-error.log*
 logs/
 
 # Editor & OS files
-.vscode/
 .idea/
 .DS_Store
 Thumbs.db
@@ -36,3 +33,4 @@ Thumbs.db
 # Misc
 AGENTS.md
 frontend/AGENTS.md
+config.bat
